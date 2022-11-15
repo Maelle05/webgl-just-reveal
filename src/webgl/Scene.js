@@ -22,11 +22,12 @@ export default class Scene {
     /**
      * Test cube
      */
-    const cube = new THREE.Mesh(
+    this.cube = new THREE.Mesh(
       new THREE.BoxGeometry(1, 1, 1),
-      new THREE.MeshBasicMaterial({ color: '#ff0000' })
+      new THREE.MeshBasicMaterial({ color: '#ff0000', wireframe: true })
     )
-    this.scene.add(cube)
+    
+    this.scene.add(this.cube)
   }
 
   update(){
