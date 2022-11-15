@@ -31,7 +31,7 @@ export default class WebGlManager {
 
       // Camera
       this.camera = new THREE.PerspectiveCamera(35, this.sizes.width / this.sizes.height, 0.5, 700)
-      this.camera.position.set(0, 5, 0)
+      this.camera.position.set(0, 6, -15)
       this.scene.add(this.camera)
 
       // OrbitControls

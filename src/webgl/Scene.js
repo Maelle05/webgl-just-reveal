@@ -1,8 +1,9 @@
 import WebGlManager from './webglManager'
 import * as THREE from 'three'
 import data from '../../public/assets/content/data'
+import Flor from '../webgl/entities/Flor'
 
-console.log(data.content)
+// console.log(data.content)
 
 let sceneInstance
 
@@ -22,18 +23,12 @@ export default class Scene {
     this.canvas = this.webgl.canvas
     this.scene = this.webgl.scene
 
-    /**
-     * Test cube
-     */
-    this.cube = new THREE.Mesh(
-      new THREE.BoxGeometry(1, 1, 1),
-      new THREE.MeshBasicMaterial({ color: '#ff0000', wireframe: true })
-    )
-    
-    this.scene.add(this.cube)
+    // Create flor - Instance Meshs
+    this.flor =  new Flor(this.scene)
   }
 
   update(){
     // console.log('tick')
+    this.flor.update()
   }
 }
