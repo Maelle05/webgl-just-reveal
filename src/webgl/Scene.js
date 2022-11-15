@@ -1,5 +1,8 @@
-import WebGlManager from "./webglManager"
+import WebGlManager from './webglManager'
 import * as THREE from 'three'
+import data from '../../public/assets/content/data'
+
+console.log(data.content)
 
 let sceneInstance
 
