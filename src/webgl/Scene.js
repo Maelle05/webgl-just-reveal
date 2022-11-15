@@ -1,6 +1,5 @@
 import WebGlManager from './webglManager'
 import * as THREE from 'three'
-import data from '../../public/assets/content/data'
 import Flor from '../webgl/entities/Flor'
 
 // console.log(data.content)
@@ -25,6 +24,7 @@ export default class Scene {
 
     // Create flor - Instance Meshs
     this.flor =  new Flor(this.scene)
+
   }
 
   update(){

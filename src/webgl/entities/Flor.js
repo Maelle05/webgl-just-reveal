@@ -55,7 +55,7 @@ export default class Flor {
           if (this.isPeak(i)) {
             y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1 + peakElevation;
           } else if(this.isMountOfPeak(i)){
-            console.log('coucou');
+            // console.log('coucou');
             y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1 + peakElevation*0.3;
           } else {
             y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1;

@@ -5,6 +5,10 @@ import Sizes from './utils/Sizes.js'
 import Time from './utils/Time'
 
 import Scene from '../webgl/Scene'
+import Scroll from './utils/Scroll.js'
+
+import data from '../../public/assets/content/data'
+
 
 let webglInstance = null
 
@@ -21,6 +25,7 @@ export default class WebGlManager {
       this.debug = new Debug()
       this.sizes = new Sizes()
       this.time = new Time()
+      this.scroll = new Scroll(data.content)
 
 
       this.scene = new THREE.Scene()
