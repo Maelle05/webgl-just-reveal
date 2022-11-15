@@ -27,8 +27,8 @@ export default class Flor {
         for ( let z = 0; z < this.amount; z ++ ) {
           matrix.setPosition( this.offset - x, 0, this.offset - z );
           this.instMesh.setMatrixAt( i, matrix );
-
-          if (i === 56 || i === 80 || i === 170 || i === 177) {
+          
+          if (this.isPeak(i)) {
             this.instMesh.setColorAt( i, this.color.setHex( Math.random() * 0xffffff ) );
           } else {
             this.instMesh.setColorAt( i, this.color.setHex( 0xffffff ) );
@@ -48,7 +48,15 @@ export default class Flor {
 
       for ( let x = 0; x < this.amount; x ++ ) {
         for ( let z = 0; z < this.amount; z ++ ) {
-          const y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1;
+          const elevation = 0.6
+
+          let y
+          if (this.isPeak(i)) {
+            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1 + elevation;
+          } else {
+            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1;
+          }
+          
           this.dummy.position.set( this.offset - x, y, this.offset - z );
           this.dummy.updateMatrix();
 
@@ -57,6 +65,14 @@ export default class Flor {
       }
 
       this.instMesh.instanceMatrix.needsUpdate = true;
+    }
+  }
+
+  isPeak(i){
+    if (i === 56 || i === 80 || i === 170 || i === 177) {
+      return true
+    } else {
+      return false
     }
   }
 
