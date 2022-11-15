@@ -7,6 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lil-gui": "^0.17.0",
     "three": "^0.146.0",
     "vue": "^3.2.41",
     "vue-router": "^4.1.5"
