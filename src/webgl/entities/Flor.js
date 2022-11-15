@@ -4,12 +4,13 @@ export default class Flor {
   constructor(scene){
     this.scene = scene
 
+    this.peaks =  [56, 80, 170, 177]
+
     this.amount = 15;
     this.size = 0.9;
     this.offset = ( this.amount - 1 ) / 2;
     this.dummy =  new THREE.Object3D();
     this.color = new THREE.Color()
-
     
 		const count = Math.pow( this.amount, 2 );
     const geometry = new THREE.BoxGeometry( this.size, this.size - (this.size + 0.02), this.size  );
@@ -48,11 +49,14 @@ export default class Flor {
 
       for ( let x = 0; x < this.amount; x ++ ) {
         for ( let z = 0; z < this.amount; z ++ ) {
-          const elevation = 0.6
+          const peakElevation = 0.6
 
           let y
           if (this.isPeak(i)) {
-            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1 + elevation;
+            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1 + peakElevation;
+          } else if(this.isMountOfPeak(i)){
+            console.log('coucou');
+            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1 + peakElevation*0.3;
           } else {
             y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1;
           }
@@ -69,11 +73,22 @@ export default class Flor {
   }
 
   isPeak(i){
-    if (i === 56 || i === 80 || i === 170 || i === 177) {
+    if (i === this.peaks[0] || i === this.peaks[1] || i === this.peaks[2] || i === this.peaks[3]) {
       return true
     } else {
       return false
     }
   }
 
+  isMountOfPeak(i){
+    if ( i == (this.peaks[0] - 1)
+      || i == (this.peaks[0] + 1)
+      || i == (this.peaks[0] - this.amount)
+      || i == (this.peaks[0] + this.amount)
+    ) {
+      return true
+    } else {
+      return false
+    }
+  }
 }

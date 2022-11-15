@@ -37,7 +37,7 @@ export default class WebGlManager {
       // OrbitControls
       this.controls = new OrbitControls(this.camera, this.canvas)
       this.controls.enableDamping = true
-      this.controls.enabled = false
+      // this.controls.enabled = false
 
       // Renderer
       this.renderer = new THREE.WebGLRenderer({
