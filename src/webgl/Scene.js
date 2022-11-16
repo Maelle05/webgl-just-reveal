@@ -1,8 +1,5 @@
 import WebGlManager from './webglManager'
-import * as THREE from 'three'
-import Flor from '../webgl/entities/Flor'
-
-// console.log(data.content)
+import Flor from './entities/Flor'
 
 let sceneInstance
 
@@ -20,15 +17,16 @@ export default class Scene {
 
   setup(){
     this.canvas = this.webgl.canvas
+    this.camera = this.webgl.camera
     this.scene = this.webgl.scene
 
-    // Create flor - Instance Meshs
-    this.flor =  new Flor(this.scene)
+    // Create floor - Instance Meshs
+    this.floor =  new Flor(this.scene, this.camera)
 
   }
 
   update(){
     // console.log('tick')
-    this.flor.update()
+    this.floor.update()
   }
 }

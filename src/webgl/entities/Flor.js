@@ -1,8 +1,9 @@
 import * as THREE from 'three'
 
 export default class Flor {
-  constructor(scene){
+  constructor(scene, camera){
     this.scene = scene
+    this.camera = camera
 
     this.peaks =  [56, 80, 170, 177]
 
@@ -11,11 +12,24 @@ export default class Flor {
     this.offset = ( this.amount - 1 ) / 2;
     this.dummy =  new THREE.Object3D();
     this.color = new THREE.Color()
-    
+
+
+    // raycaster
+    this.raycaster = new THREE.Raycaster()
+    this.currentIntersectId = null
+    this.objectsToIntersects = []
+    this.mouse = new THREE.Vector2(-1, 1)
+
 		const count = Math.pow( this.amount, 2 );
     const geometry = new THREE.BoxGeometry( this.size, this.size - (this.size + 0.02), this.size  );
     const material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: false } );
     this.instMesh = new THREE.InstancedMesh( geometry, material, count );
+
+
+    window.addEventListener('mousemove', (e) => {
+      this.mouse.x = e.clientX / window.innerWidth * 2 - 1
+      this.mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
+    })
 
     this.init()
   }
@@ -24,22 +38,27 @@ export default class Flor {
     let i = 0;
     const matrix = new THREE.Matrix4();
 
+
     for ( let x = 0; x < this.amount; x ++ ) {
         for ( let z = 0; z < this.amount; z ++ ) {
           matrix.setPosition( this.offset - x, 0, this.offset - z );
           this.instMesh.setMatrixAt( i, matrix );
-          
+          this.objectsToIntersects.push(this.instMesh)
+
           if (this.isPeak(i)) {
             this.instMesh.setColorAt( i, this.color.setHex( Math.random() * 0xffffff ) );
           } else {
             this.instMesh.setColorAt( i, this.color.setHex( 0xffffff ) );
           }
-          
+
           i ++;
         }
     }
 
     this.scene.add( this.instMesh );
+
+
+
   }
 
   update(){
@@ -47,20 +66,37 @@ export default class Flor {
       let i = 0;
       const time = Date.now() * 0.001;
 
+      this.raycaster.setFromCamera(this.mouse, this.camera)
+      this.intersects = this.raycaster.intersectObjects(this.objectsToIntersects)
+
+      if (this.intersects && this.intersects.length >= 1) {
+        this.currentIntersectId = this.intersects[0].instanceId
+        console.log(this.currentIntersectId)
+      } else {
+        this.currentIntersectId = null
+      }
+
       for ( let x = 0; x < this.amount; x ++ ) {
         for ( let z = 0; z < this.amount; z ++ ) {
           const peakElevation = 0.6
+
+          if (i === this.currentIntersectId) {
+            this.instMesh.setColorAt(i, new THREE.Color("#ff0000"))
+            this.instMesh.instanceColor.needsUpdate = true
+          } else {
+            this.instMesh.setColorAt(i, new THREE.Color("#ffffff"))
+            this.instMesh.instanceColor.needsUpdate = true
+          }
 
           let y
           if (this.isPeak(i)) {
             y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1 + peakElevation;
           } else if(this.isMountOfPeak(i)){
-            // console.log('coucou');
             y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1 + peakElevation*0.3;
           } else {
             y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1;
           }
-          
+
           this.dummy.position.set( this.offset - x, y, this.offset - z );
           this.dummy.updateMatrix();
 

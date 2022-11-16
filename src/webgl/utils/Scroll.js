@@ -7,7 +7,7 @@ export default class Scroll extends EventEmitter {
     this.scroll = 0;
     this.data = data
 
-    console.log(this.data)
+    // console.log(this.data)
 
     this.lerpSpeed = 0.01;
     this.updateSpeed = 100
