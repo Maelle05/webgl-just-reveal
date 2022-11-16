@@ -27,7 +27,7 @@ export default class Flor {
     this.peaks = [3550, 4465, 4840, 5250, 6350]
     this.colorsPeaks = [ 'F72585', '7209B7', '3A0CA3', '4361EE', '4CC9F0' ] 
     this.lighthouses = 5470
-    this.peakElevation = 5
+    this.peakElevation = [0, 0, 0, 0, 0]
     this.mountSize = 4
     this.mountPeaks = []
     this.peaks.forEach(peak => {
@@ -107,7 +107,14 @@ export default class Flor {
   }
 
   update(){
-    console.log(this.scroll.getDataValue())
+    this.peakElevation = [
+      this.scroll.getDataValue().confinement * 0.1,
+      this.scroll.getDataValue().recipe * 0.1,
+      this.scroll.getDataValue().sport * 0.1,
+      this.scroll.getDataValue().streaming * 0.1,
+      this.scroll.getDataValue().vaccine * 0.1,
+    ]
+    let peaksStep = 0
     if(this.instMesh){
       let i = 0;
       const time = Date.now() * 0.001;
@@ -136,17 +143,18 @@ export default class Flor {
           let y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.2;
 
           if (this.isPeak(i)) {
-            y += this.peakElevation;
+            y += this.peakElevation[peaksStep];
+            peaksStep++
           }
 
           if(i ===  this.lighthouses){
-            y += this.peakElevation 
+            y += this.peakElevation[0]
           }
           
           for (let m = 0; m < this.mountPeaks.length; m++) {
             for (let r = 0; r < this.mountPeaks[m].length; r++) {
               if(this.mountPeaks[m][r].includes(i)){
-                y += this.peakElevation*(0.6/(r+1));
+                y += this.peakElevation[m]*(0.6/(r+1));
                 
                 this.topInstMesh.setColorAt( i, this.color.setHex( this.getColorDegrade(this.colorsPeaks[m], r) ) );
               }
@@ -168,6 +176,8 @@ export default class Flor {
 
       this.instMesh.instanceMatrix.needsUpdate = true;
       this.topInstMesh.instanceMatrix.needsUpdate = true;
+
+      peaksStep = 0
     }
   }
 
