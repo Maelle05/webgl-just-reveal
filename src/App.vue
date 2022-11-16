@@ -7,7 +7,7 @@ import Introduction from '@/components/Introduction.vue'
 
 <template>
   <header>
-    <Introduction/>
+    <!-- <Introduction/> -->
     <Logo />
   </header>
 </template>
