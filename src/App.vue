@@ -1,12 +1,14 @@
 <script setup>
-import VTitre from './components/VTitre.vue'
-import Scene from './webgl/Scene'
+import Logo from './components/Logo.vue'
+import Scene from '../src/webgl/Scene'
+import Introduction from '@/components/Introduction.vue'
+
 </script>
 
 <template>
   <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/svg/logo.svg" width="25" height="25" /> -->
-    <!-- <VTitre nameTitre="ça marche woupiiiii" /> -->
+    <Introduction/>
+    <Logo />
   </header>
 </template>
 

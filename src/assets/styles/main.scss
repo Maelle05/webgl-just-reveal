@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  overflow: hidden;
+}
+
+#app {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#webgl{
+  width: 100vw;
+  height: 100vh;
+}
