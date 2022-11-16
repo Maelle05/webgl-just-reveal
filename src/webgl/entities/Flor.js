@@ -11,7 +11,7 @@ export default class Flor {
     this.dummy =  new THREE.Object3D();
     this.topDummy =  new THREE.Object3D();
     this.color = new THREE.Color()
-    
+
 		const count = Math.pow( this.amount, 2 );
 
     const geometry = new THREE.BoxGeometry( this.size, this.size * 6, this.size  );
@@ -24,7 +24,7 @@ export default class Flor {
 
 
     this.peaks = [3550, 4465, 4840, 5250, 6350]
-    this.colorsPeaks = [ 0xF72585, 0x7209B7, 0x3A0CA3, 0x4361EE, 0x4CC9F0 ] 
+    this.colorsPeaks = [ 0xF72585, 0x7209B7, 0x3A0CA3, 0x4361EE, 0x4CC9F0 ]
     this.lighthouses = 5470
     this.peakElevation = 5
     this.mountSize = 4
@@ -45,7 +45,7 @@ export default class Flor {
 
           for (let m = 0;  m < mountPeak[mountPeak.length-1].length; m++) {
             const upID = mountPeak[mountPeak.length-1][m]
-            
+
             const haut = upID - 1
             const droite = upID + this.amount
             const bas = upID + 1
@@ -57,7 +57,7 @@ export default class Flor {
             if(!this.peaks.includes(gauche) && !mountPeak[mountPeak.length-1].includes(gauche)) circleMountPeak.push(gauche)
           }
         }
-        
+
         mountPeak.push(circleMountPeak)
       }
       this.mountPeaks.push(mountPeak)
@@ -89,7 +89,7 @@ export default class Flor {
           topMatrix.setPosition( this.offset - x, 3.5, this.offset - z );
           this.instMesh.setMatrixAt( i, matrix );
           this.topInstMesh.setMatrixAt ( i, topMatrix);
-          
+
           if (this.isPeak(i)) {
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
             this.topInstMesh.setColorAt( i, this.color.setHex( this.colorsPeaks[peaksStep] ) );
@@ -98,7 +98,7 @@ export default class Flor {
             this.topInstMesh.setColorAt( i, this.color.setHex( 0xffffff ) );
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
           }
-          
+
           i ++;
         }
     }
@@ -139,9 +139,9 @@ export default class Flor {
           }
 
           if(i ===  this.lighthouses){
-            y += this.peakElevation 
+            y += this.peakElevation
           }
-          
+
           for (let m = 0; m < this.mountPeaks.length; m++) {
             for (let r = 0; r < this.mountPeaks[m].length; r++) {
               if(this.mountPeaks[m][r].includes(i)){
@@ -149,8 +149,8 @@ export default class Flor {
               }
             }
           }
-          
-          
+
+
           this.dummy.position.set( this.offset - x, y, this.offset - z );
           this.dummy.updateMatrix();
 

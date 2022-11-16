@@ -20,3 +20,10 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+.u-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: visibility 0.4s linear, opacity 0.4s linear !important;
+  //display: none !important;
+}

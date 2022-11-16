@@ -1,19 +1,31 @@
 <template>
-  <section class="introduction">
+  <section class="introduction" ref="introductionRef">
     <div class="introduction__content">
-      <p>Dans cet océan de données internet, chaque “montagne colorée” représente une catégorie de recherche.</p>
-      <p>La navigation au scroll permet de visualiser l’évolution des ces recherches sur une période de 2 ans. </p>
-      <p>Sur certaines dates ou évènements particuliers, les données impactées afficheront au hover des
-        informations.</p>
+      <img src="/public/assets/images/example.png" alt="example of tower">
+      <div>
+        <p>Dans cet océan de données internet, chaque “montagne colorée” représente une catégorie de recherche.</p>
+        <p>La navigation au scroll permet de visualiser l’évolution des ces recherches sur une période de 2 ans. </p>
+        <p>Sur certaines dates ou évènements particuliers, les données impactées afficheront au hover des
+          informations.</p>
+      </div>
     </div>
-    <button class="introduction__button">
+    <button class="introduction__button" @click="hideModal">
       Commencer l'expérience
     </button>
   </section>
 </template>
 
 <script setup>
+import {ref} from "vue"
 
+const introductionRef = ref()
+
+const hideModal = () => {
+  console.log('hide', introductionRef.value)
+
+  introductionRef.value.classList.add('u-hidden')
+
+}
 </script>
 
 <style scoped lang="scss">
@@ -23,6 +35,9 @@
   position: fixed;
   top: 0;
   background: linear-gradient(270deg, #222126 -7.18%, rgba(27, 27, 27, 0) 100%);
+
+  opacity: 1;
+  visibility: visible;
 
   display: flex;
   flex-direction: column;
@@ -36,7 +51,22 @@
     max-width: 630px;
     padding: 37px 35px;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
+
+    display: flex;
+
+    img {
+      height: 214px;
+      margin-right: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__button {

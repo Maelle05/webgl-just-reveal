@@ -30,6 +30,7 @@ export default class WebGlManager {
 
       this.scene = new THREE.Scene()
       this.scene.background = 'black'
+      // this.scene.fog = new THREE.FogExp2( 0xff0000, 0.003 )
 
       // My Scene object
       this.world = new Scene()
@@ -59,7 +60,7 @@ export default class WebGlManager {
       {
         this.resize()
       })
-        
+
       // Time tick event
       this.time.on('tick', () =>
       {
@@ -70,7 +71,7 @@ export default class WebGlManager {
     resize(){
       this.camera.aspect = this.sizes.width / this.sizes.height
       this.camera.updateProjectionMatrix()
-  
+
       this.renderer.setSize(this.sizes.width, this.sizes.height)
       this.renderer.setPixelRatio(Math.min(this.sizes.pixelRatio, 2))
     }
