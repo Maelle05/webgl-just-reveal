@@ -24,6 +24,7 @@ export default class Flor {
 
 
     this.peaks = [3550, 4465, 4840, 5250, 6350]
+    this.lighthouses = 5470
     this.peakElevation = 3
     this.mountSize = 4
     this.mountPeaks = []
@@ -112,7 +113,6 @@ export default class Flor {
 
       if (this.intersects && this.intersects.length >= 1) {
         this.currentIntersectId = this.intersects[0].instanceId
-        console.log(this.currentIntersectId)
       } else {
         this.currentIntersectId = null
       }
@@ -133,6 +133,10 @@ export default class Flor {
 
           if (this.isPeak(i)) {
             y += this.peakElevation;
+          }
+
+          if(i ===  this.lighthouses){
+            y += this.peakElevation 
           }
           
           for (let m = 0; m < this.mountPeaks.length; m++) {
