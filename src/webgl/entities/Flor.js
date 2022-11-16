@@ -1,9 +1,10 @@
 import * as THREE from 'three'
 
 export default class Flor {
-  constructor(scene, camera){
+  constructor(scene, camera, scroll){
     this.scene = scene
     this.camera = camera
+    this.scroll = scroll
 
     this.amount = 100;
     this.size = 0.9;
@@ -63,7 +64,6 @@ export default class Flor {
       this.mountPeaks.push(mountPeak)
     });
 
-
     // raycaster
     this.raycaster = new THREE.Raycaster()
     this.currentIntersectId = null
@@ -107,6 +107,7 @@ export default class Flor {
   }
 
   update(){
+    console.log(this.scroll.getDataValue())
     if(this.instMesh){
       let i = 0;
       const time = Date.now() * 0.001;
@@ -196,9 +197,6 @@ export default class Flor {
     blue += (deltaB / this.mountSize) * (idMount*0.7)
     blue = Math.min(blue , 255)
     blue = Math.floor(blue).toString(16)
-
-
-    // console.log(red, green, blue);
 
     return '0x' + red + green + blue
   }
