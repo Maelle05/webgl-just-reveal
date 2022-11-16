@@ -16,18 +16,16 @@ export default class Scene {
     this.setup();
   }
 
-  setup() {
-    this.canvas = this.webgl.canvas;
-    this.scene = this.webgl.scene;
+  setup(){
+    this.canvas = this.webgl.canvas
+    this.scene = this.webgl.scene
+    this.camera = this.webgl.camera
 
     const axesHelper = new THREE.AxesHelper(5);
     this.scene.add(axesHelper);
 
-    // Lights
-    // this.ambientLight = new THREE.AmbientLight(0x404040); // soft white light
-    // this.pointLight = new THREE.PointLight(0xffffff, 1, 100);
-    this.pointLight = new THREE.PointLight(0x90A9FC, .2, 100);
-    this.pointLight.position.set(0, 15, 5);
+    // Create flor - Instance Meshs
+    this.flor =  new Flor(this.scene , this.camera)
 
     // const light = new THREE.PointLight(0xff0000, 1, 100);
     // light.position.set(50, 50, 50);
