@@ -1,8 +1,9 @@
 import * as THREE from 'three'
 
 export default class Flor {
-  constructor(scene){
+  constructor(scene, camera){
     this.scene = scene
+    this.camera = camera
 
     this.amount = 100;
     this.size = 0.9;
@@ -60,6 +61,17 @@ export default class Flor {
       this.mountPeaks.push(mountPeak)
     });
 
+
+    // raycaster
+    this.raycaster = new THREE.Raycaster()
+    this.currentIntersectId = null
+    this.mouse = new THREE.Vector2(-1, 1)
+
+    window.addEventListener('mousemove', (e) => {
+      this.mouse.x = e.clientX / window.innerWidth * 2 - 1
+      this.mouse.y = -(e.clientY / window.innerHeight) * 2 + 1
+    })
+
     this.init()
   }
 
@@ -95,8 +107,28 @@ export default class Flor {
       let i = 0;
       const time = Date.now() * 0.001;
 
+      this.raycaster.setFromCamera(this.mouse, this.camera)
+      this.intersects = this.raycaster.intersectObject(this.instMesh)
+
+      if (this.intersects && this.intersects.length >= 1) {
+        this.currentIntersectId = this.intersects[0].instanceId
+        console.log(this.currentIntersectId)
+      } else {
+        this.currentIntersectId = null
+      }
+
       for ( let x = 0; x < this.amount; x ++ ) {
         for ( let z = 0; z < this.amount; z ++ ) {
+
+          if (i === this.currentIntersectId) {
+            this.instMesh.setColorAt(i, new THREE.Color("#ffffff"))
+            this.instMesh.instanceColor.needsUpdate = true
+          } else {
+            this.instMesh.setColorAt(i, new THREE.Color("#363636"))
+            this.instMesh.instanceColor.needsUpdate = true
+          }
+
+
           let y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.2;
 
           if (this.isPeak(i)) {

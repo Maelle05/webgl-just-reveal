@@ -21,6 +21,7 @@ export default class Scene {
   setup(){
     this.canvas = this.webgl.canvas
     this.scene = this.webgl.scene
+    this.camera = this.webgl.camera
 
     // Lights 
     this.ambientLight = new THREE.AmbientLight( 0x404040 ); // soft white light
@@ -29,7 +30,7 @@ export default class Scene {
     this.scene.add( this.ambientLight , this.pointLight );
 
     // Create flor - Instance Meshs
-    this.flor =  new Flor(this.scene)
+    this.flor =  new Flor(this.scene , this.camera)
 
   }
 
