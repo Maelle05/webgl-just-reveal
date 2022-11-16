@@ -28,6 +28,7 @@ export default class Flor {
     this.colorsPeaks = [ 'F72585', '7209B7', '3A0CA3', '4361EE', '4CC9F0' ] 
     this.lighthouses = 5470
     this.peakElevation = [0, 0, 0, 0, 0]
+    this.peakTargetElevation = [0, 0, 0, 0, 0]
     this.mountSize = 4
     this.mountPeaks = []
     this.peaks.forEach(peak => {
@@ -107,12 +108,19 @@ export default class Flor {
   }
 
   update(){
-    this.peakElevation = [
+    this.peakTargetElevation = [
       this.scroll.getDataValue().confinement * 0.1,
       this.scroll.getDataValue().recipe * 0.1,
       this.scroll.getDataValue().sport * 0.1,
       this.scroll.getDataValue().streaming * 0.1,
       this.scroll.getDataValue().vaccine * 0.1,
+    ]
+    this.peakElevation = [
+      THREE.MathUtils.lerp(this.peakElevation[0], this.peakTargetElevation[0], 0.1),
+      THREE.MathUtils.lerp(this.peakElevation[1], this.peakTargetElevation[1], 0.1),
+      THREE.MathUtils.lerp(this.peakElevation[2], this.peakTargetElevation[2], 0.1),
+      THREE.MathUtils.lerp(this.peakElevation[3], this.peakTargetElevation[3], 0.1),
+      THREE.MathUtils.lerp(this.peakElevation[4], this.peakTargetElevation[4], 0.1),
     ]
     let peaksStep = 0
     if(this.instMesh){
