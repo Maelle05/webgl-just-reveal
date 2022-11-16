@@ -24,7 +24,7 @@ export default class Flor {
 
 
     this.peaks = [3550, 4465, 4840, 5250, 6350]
-    this.colorsPeaks = [ 0xF72585, 0x7209B7, 0x3A0CA3, 0x4361EE, 0x4CC9F0 ] 
+    this.colorsPeaks = [ 'F72585', '7209B7', '3A0CA3', '4361EE', '4CC9F0' ] 
     this.lighthouses = 5470
     this.peakElevation = 5
     this.mountSize = 4
@@ -92,7 +92,7 @@ export default class Flor {
           
           if (this.isPeak(i)) {
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
-            this.topInstMesh.setColorAt( i, this.color.setHex( this.colorsPeaks[peaksStep] ) );
+            this.topInstMesh.setColorAt( i, this.color.setHex( '0x' + this.colorsPeaks[peaksStep] ) );
             peaksStep++
           } else {
             this.topInstMesh.setColorAt( i, this.color.setHex( 0xffffff ) );
@@ -146,7 +146,8 @@ export default class Flor {
             for (let r = 0; r < this.mountPeaks[m].length; r++) {
               if(this.mountPeaks[m][r].includes(i)){
                 y += this.peakElevation*(0.6/(r+1));
-                this.topInstMesh.setColorAt( i, this.color.setHex( this.colorsPeaks[m] ) );
+                
+                this.topInstMesh.setColorAt( i, this.color.setHex( this.getColorDegrade(this.colorsPeaks[m], r) ) );
               }
             }
           }
@@ -175,5 +176,30 @@ export default class Flor {
     } else {
       return false
     }
+  }
+
+  getColorDegrade(color, idMount){
+    let red = parseInt(color.substring(0,2), 16)
+    let green = parseInt(color.substring(2,4), 16)
+    let blue = parseInt(color.substring(4), 16)
+
+    const deltaR = 255 - red
+    const deltaG = 255 - green
+    const deltaB = 255 - blue
+
+    red += (deltaR / this.mountSize) * idMount
+    red = Math.min(red , 255)
+    red = Math.floor(red).toString(16)
+    green += (deltaG / this.mountSize) * idMount
+    green = Math.min(green , 255)
+    green = Math.floor(green).toString(16)
+    blue += (deltaB / this.mountSize) * idMount
+    blue = Math.min(blue , 255)
+    blue = Math.floor(blue).toString(16)
+
+
+    // console.log(red, green, blue);
+
+    return '0x' + red + green + blue
   }
 }
