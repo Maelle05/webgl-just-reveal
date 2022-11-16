@@ -146,6 +146,7 @@ export default class Flor {
             for (let r = 0; r < this.mountPeaks[m].length; r++) {
               if(this.mountPeaks[m][r].includes(i)){
                 y += this.peakElevation*(0.6/(r+1));
+                this.topInstMesh.setColorAt( i, this.color.setHex( this.colorsPeaks[m] ) );
               }
             }
           }
