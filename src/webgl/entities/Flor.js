@@ -8,13 +8,18 @@ export default class Flor {
     this.size = 0.9;
     this.offset = ( this.amount - 1 ) / 2;
     this.dummy =  new THREE.Object3D();
+    this.topDummy =  new THREE.Object3D();
     this.color = new THREE.Color()
     
 		const count = Math.pow( this.amount, 2 );
+
     const geometry = new THREE.BoxGeometry( this.size, this.size * 6, this.size  );
-    // const geometry = new THREE.BoxGeometry( this.size, this.size - (this.size + 0.02), this.size  );
     const material = new THREE.MeshPhysicalMaterial( { color: 0xffffff, wireframe: false } );
     this.instMesh = new THREE.InstancedMesh( geometry, material, count );
+
+    const topGeometry =  new THREE.BoxGeometry( this.size + 0.01, 0.10, this.size + 0.01 );
+    const topMaterial =  new THREE.MeshBasicMaterial( { color: 0xFF8C1A, wireframe: false } );
+    this.topInstMesh = new THREE.InstancedMesh( topGeometry, topMaterial, count );
 
 
     this.peaks = [3550, 4465, 4840, 5250, 6350]
@@ -61,15 +66,20 @@ export default class Flor {
   init(){
     let i = 0;
     const matrix = new THREE.Matrix4();
+    const topMatrix = new THREE.Matrix4();
 
     for ( let x = 0; x < this.amount; x ++ ) {
         for ( let z = 0; z < this.amount; z ++ ) {
           matrix.setPosition( this.offset - x, 0, this.offset - z );
+          topMatrix.setPosition( this.offset - x, 3.5, this.offset - z );
           this.instMesh.setMatrixAt( i, matrix );
+          this.topInstMesh.setMatrixAt ( i, topMatrix);
           
           if (this.isPeak(i)) {
-            this.instMesh.setColorAt( i, this.color.setHex( Math.random() * 0xffffff ) );
+            this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
+            this.topInstMesh.setColorAt( i, this.color.setHex( Math.random() * 0xffffff ) );
           } else {
+            this.topInstMesh.setColorAt( i, this.color.setHex( 0xff8C1A ) );
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
           }
           
@@ -77,7 +87,7 @@ export default class Flor {
         }
     }
 
-    this.scene.add( this.instMesh );
+    this.scene.add( this.instMesh, this.topInstMesh );
   }
 
   update(){
@@ -105,11 +115,18 @@ export default class Flor {
           this.dummy.position.set( this.offset - x, y, this.offset - z );
           this.dummy.updateMatrix();
 
+          this.topDummy.position.set(this.offset - x, y +  2.5, this.offset - z)
+          this.topDummy.updateMatrix();
+
+          this.topInstMesh.setMatrixAt( i, this.topDummy.matrix );
           this.instMesh.setMatrixAt( i ++, this.dummy.matrix );
+
+
         }
       }
 
       this.instMesh.instanceMatrix.needsUpdate = true;
+      this.topInstMesh.instanceMatrix.needsUpdate = true;
     }
   }
 
