@@ -187,13 +187,13 @@ export default class Flor {
     const deltaG = 255 - green
     const deltaB = 255 - blue
 
-    red += (deltaR / this.mountSize) * idMount
+    red += (deltaR / this.mountSize) * (idMount*0.7)
     red = Math.min(red , 255)
     red = Math.floor(red).toString(16)
-    green += (deltaG / this.mountSize) * idMount
+    green += (deltaG / this.mountSize) * (idMount*0.7)
     green = Math.min(green , 255)
     green = Math.floor(green).toString(16)
-    blue += (deltaB / this.mountSize) * idMount
+    blue += (deltaB / this.mountSize) * (idMount*0.7)
     blue = Math.min(blue , 255)
     blue = Math.floor(blue).toString(16)
 
