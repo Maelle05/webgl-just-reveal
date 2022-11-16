@@ -22,7 +22,7 @@ export default class Scroll extends EventEmitter {
     let interval = setInterval(() => {
       //Lerp the scroll
       this.scroll = this.lerp(this.scroll, this.nextScroll, this.lerpSpeed);
-      //   console.log(this.scroll)
+      //console.log(this.scroll)
 
       //Clear interval si la valeur est égale au nextScroll
       if (

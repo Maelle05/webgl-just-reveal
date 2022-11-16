@@ -22,6 +22,12 @@ export default class Scene {
     this.canvas = this.webgl.canvas
     this.scene = this.webgl.scene
 
+    // Lights 
+    this.ambientLight = new THREE.AmbientLight( 0x404040 ); // soft white light
+    this.pointLight = new THREE.PointLight( 0xffffff, 1, 100 );
+    this.pointLight.position.set( 0, 10, 5 );
+    this.scene.add( this.ambientLight , this.pointLight );
+
     // Create flor - Instance Meshs
     this.flor =  new Flor(this.scene)
 

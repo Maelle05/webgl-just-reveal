@@ -4,17 +4,20 @@ export default class Flor {
   constructor(scene){
     this.scene = scene
 
-    this.peaks =  [56, 80, 170, 177]
+    this.peaks =  [560, 80, 520, 560]
 
-    this.amount = 15;
+    this.amount = 100;
     this.size = 0.9;
     this.offset = ( this.amount - 1 ) / 2;
     this.dummy =  new THREE.Object3D();
     this.color = new THREE.Color()
     
 		const count = Math.pow( this.amount, 2 );
-    const geometry = new THREE.BoxGeometry( this.size, this.size - (this.size + 0.02), this.size  );
-    const material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: false } );
+    const geometry = new THREE.BoxGeometry( this.size, this.size * 4, this.size  );
+    // const geometry = new THREE.BoxGeometry( this.size, this.size - (this.size + 0.02), this.size  );
+
+    
+    const material = new THREE.MeshPhysicalMaterial( { color: 0xffffff, wireframe: false } );
     this.instMesh = new THREE.InstancedMesh( geometry, material, count );
 
     this.init()
@@ -53,12 +56,11 @@ export default class Flor {
 
           let y
           if (this.isPeak(i)) {
-            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1 + peakElevation;
+            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.2 + peakElevation;
           } else if(this.isMountOfPeak(i)){
-            // console.log('coucou');
-            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1 + peakElevation*0.3;
+            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.2 + peakElevation*0.3;
           } else {
-            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.1;
+            y = (Math.sin( x / 4 + time ) + Math.sin( z / 4 + time )) * 0.2;
           }
           
           this.dummy.position.set( this.offset - x, y, this.offset - z );
