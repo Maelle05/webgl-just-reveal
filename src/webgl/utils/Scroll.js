@@ -5,10 +5,10 @@ export default class Scroll extends EventEmitter {
     super();
     this.nextScroll = 0;
     this.scroll = 0;
-    this.data = data
+    this.data = data;
 
-    this.lerpSpeed = 0.01;
-    this.updateSpeed = 100
+    this.lerpSpeed = 0.05;
+    this.updateSpeed = 5;
 
     window.addEventListener("mousewheel", (e) => {
       this.scrollUpdate(e);
@@ -17,10 +17,16 @@ export default class Scroll extends EventEmitter {
 
   scrollUpdate(e) {
     this.nextScroll += e.deltaY * 0.01;
+
+    if (this.nextScroll < 0) {
+      this.nextScroll = this.data.length;
+    } else if (this.nextScroll > this.data.length) {
+      this.nextScroll = 0;
+    }
+
     let interval = setInterval(() => {
       //Lerp the scroll
       this.scroll = this.lerp(this.scroll, this.nextScroll, this.lerpSpeed);
-      //console.log(this.scroll)
 
       //Clear interval si la valeur est égale au nextScroll
       if (
@@ -36,9 +42,9 @@ export default class Scroll extends EventEmitter {
       }
 
       //Console log la semaine
-      console.log(this.data[Math.round(this.scroll)].week)
+      // console.log(this.data[Math.round(this.scroll)].week)
       //Log les values de scroll
-      console.log(this.nextScroll, this.scroll);
+      // console.log(this.nextScroll, this.scroll);
     }, this.updateSpeed);
   }
 
@@ -47,7 +53,7 @@ export default class Scroll extends EventEmitter {
   }
 
   getDataValue() {
-    return this.data[this.scroll]
+    return this.data[this.scroll];
   }
 
   lerp(start, end, amt) {
