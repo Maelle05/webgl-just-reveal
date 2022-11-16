@@ -15,17 +15,18 @@ export default class Flor {
 		const count = Math.pow( this.amount, 2 );
 
     const geometry = new THREE.BoxGeometry( this.size, this.size * 6, this.size  );
-    const material = new THREE.MeshPhysicalMaterial( { color: 0xffffff, wireframe: false } );
+    const material = new THREE.MeshStandardMaterial( { color: 0xffffff, wireframe: false } );
     this.instMesh = new THREE.InstancedMesh( geometry, material, count );
 
     const topGeometry =  new THREE.BoxGeometry( this.size + 0.01, 0.10, this.size + 0.01 );
-    const topMaterial =  new THREE.MeshBasicMaterial( { color: 0xFF8C1A, wireframe: false } );
+    const topMaterial =  new THREE.MeshBasicMaterial( { color: 0xAfAfAf, wireframe: false } );
     this.topInstMesh = new THREE.InstancedMesh( topGeometry, topMaterial, count );
 
 
     this.peaks = [3550, 4465, 4840, 5250, 6350]
+    this.colorsPeaks = [ 0xF72585, 0x7209B7, 0x3A0CA3, 0x4361EE, 0x4CC9F0 ] 
     this.lighthouses = 5470
-    this.peakElevation = 3
+    this.peakElevation = 5
     this.mountSize = 4
     this.mountPeaks = []
     this.peaks.forEach(peak => {
@@ -78,6 +79,7 @@ export default class Flor {
 
   init(){
     let i = 0;
+    let peaksStep = 0
     const matrix = new THREE.Matrix4();
     const topMatrix = new THREE.Matrix4();
 
@@ -90,9 +92,10 @@ export default class Flor {
           
           if (this.isPeak(i)) {
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
-            this.topInstMesh.setColorAt( i, this.color.setHex( Math.random() * 0xffffff ) );
+            this.topInstMesh.setColorAt( i, this.color.setHex( this.colorsPeaks[peaksStep] ) );
+            peaksStep++
           } else {
-            this.topInstMesh.setColorAt( i, this.color.setHex( 0xff8C1A ) );
+            this.topInstMesh.setColorAt( i, this.color.setHex( 0xffffff ) );
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
           }
           
@@ -156,7 +159,6 @@ export default class Flor {
 
           this.topInstMesh.setMatrixAt( i, this.topDummy.matrix );
           this.instMesh.setMatrixAt( i ++, this.dummy.matrix );
-
 
         }
       }

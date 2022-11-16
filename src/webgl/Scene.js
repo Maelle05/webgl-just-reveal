@@ -2,8 +2,6 @@ import WebGlManager from './webglManager'
 import * as THREE from 'three'
 import Flor from '../webgl/entities/Flor'
 
-// console.log(data.content)
-
 let sceneInstance
 
 export default class Scene {
