@@ -21,10 +21,7 @@ import {ref} from "vue"
 const introductionRef = ref()
 
 const hideModal = () => {
-  console.log('hide', introductionRef.value)
-
   introductionRef.value.classList.add('u-hidden')
-
 }
 </script>
 
@@ -75,7 +72,7 @@ const hideModal = () => {
     border-radius: 37.5px;
     padding: 15px 21px;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     cursor: pointer;
   }
 }
