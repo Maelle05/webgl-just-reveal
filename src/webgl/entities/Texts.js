@@ -13,7 +13,7 @@ export default class Texts {
       },
       {
         name: 'Recettes',
-        desc: 'balabalhab \nsodifjsldufhsld fsjfd \nsdjufisodfbhsu'
+        desc: 'Au cours des années covid, la cuisine est devenu un passe-temps très apprécié chez les français'
       },
       {
         name: 'Sport',
@@ -21,7 +21,7 @@ export default class Texts {
       },
       {
         name: 'Streaming',
-        desc: 'balabalhab'
+        desc: 'La crise sanitaire a provoqué une énorme augmentation du streaming sur des plateformes comme netflix mais aussi Twitch'
       },
       {
         name: 'Vaccin',
@@ -50,11 +50,11 @@ export default class Texts {
       },
       {
         name: "Rave party",
-        desc: "rave party à Pont Réan \nle 31 décembre 2020"
+        desc: "rave party à Pont Réan \n pour fêter le nouvel an"
       },
       {
         name: "Dauphins",
-        desc: "des dauphins dans la lagune \nde Venise en italie le 22 mars 2021"
+        desc: "des dauphins sont apparus dans le port de Cagliari \n profitant du calme du confinement"
       }
     ]
 
