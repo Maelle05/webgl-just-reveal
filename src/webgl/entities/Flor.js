@@ -377,12 +377,12 @@ export default class Flor {
     if( data && data.event){
       return data.event.id
     }
-
     return this.lastLighthousesID
   }
 
   animCamera(target, intersect){
     if (this.currentIntersectId === intersect && this.clicked === true) {
+      console.log(target);
       if (
         this.isAnimated === false &&
         this.hasBeenClicked === false
