@@ -29,6 +29,7 @@ export default class Flor {
     this.lighthouses = 5470
     this.peakElevation = [0, 0, 0, 0, 0]
     this.peakTargetElevation = [0, 0, 0, 0, 0]
+    this.peaksPosForExport = [{x:0, y:0, z:0}, {x:0, y:0, z:0}, {x:0, y:0, z:0}, {x:0, y:0, z:0}, {x:0, y:0, z:0},]
     this.mountSize = 4
     this.mountPeaks = []
     this.peaks.forEach(peak => {
@@ -79,6 +80,7 @@ export default class Flor {
   }
 
   init(){
+
     let i = 0;
     let peaksStep = 0
     const matrix = new THREE.Matrix4();
@@ -131,14 +133,17 @@ export default class Flor {
       let i = 0;
       const time = Date.now() * 0.001;
 
-      this.raycaster.setFromCamera(this.mouse, this.camera)
-      this.intersects = this.raycaster.intersectObject(this.instMesh)
+      if (this.camera) {
+        this.raycaster.setFromCamera(this.mouse, this.camera)
+        this.intersects = this.raycaster.intersectObject(this.instMesh)
 
-      if (this.intersects && this.intersects.length >= 1) {
-        this.currentIntersectId = this.intersects[0].instanceId
-      } else {
-        this.currentIntersectId = null
+        if (this.intersects && this.intersects.length >= 1) {
+          this.currentIntersectId = this.intersects[0].instanceId
+        } else {
+          this.currentIntersectId = null
+        }
       }
+      
 
       for ( let x = 0; x < this.amount; x ++ ) {
         for ( let z = 0; z < this.amount; z ++ ) {
@@ -156,6 +161,11 @@ export default class Flor {
 
           if (this.isPeak(i)) {
             y += this.peakElevation[peaksStep];
+
+            this.peaksPosForExport[peaksStep].x = this.offset - x
+            this.peaksPosForExport[peaksStep].y = y
+            this.peaksPosForExport[peaksStep].z = this.offset - z
+
             peaksStep++
           }
 
@@ -221,5 +231,9 @@ export default class Flor {
     blue = Math.floor(blue).toString(16)
 
     return '0x' + red + green + blue
+  }
+
+  getPeaksPos(){
+    return this.peaksPosForExport
   }
 }
