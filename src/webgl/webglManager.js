@@ -37,12 +37,13 @@ export default class WebGlManager {
 
       // Camera
       // this.camera = new THREE.OrthographicCamera( this.sizes.width / - 2, this.sizes.width / 2, this.sizes.height / 2, this.sizes.height / - 2, 1, 1000 )
-      this.camera = new THREE.PerspectiveCamera(35, this.sizes.width / this.sizes.height, 0.5, 700)
-      this.camera.position.set(0, 10, -40)
+      // this.camera = new THREE.PerspectiveCamera(35, this.sizes.width / this.sizes.height, 0.5, 700)
+      this.camera = new THREE.OrthographicCamera( this.sizes.width / - 2, this.sizes.width / 2, this.sizes.height / 2, this.sizes.height / - 2, 1, 1000 );
+      this.camera.position.set(0, 5, -5)
       this.scene.add(this.camera)
 
       // OrbitControls
-      this.controls = new OrbitControls(this.camera, this.canvas)
+      // this.controls = new OrbitControls(this.camera, this.canvas)
       this.controls.enableDamping = true
       this.controls.enabled = false
 
