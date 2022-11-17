@@ -53,7 +53,7 @@ export default class Scroll extends EventEmitter {
   }
 
   getDataValue() {
-    return this.data[Math.floor(this.scroll)];
+    return this.data[Math.round(this.scroll)]
   }
 
   lerp(start, end, amt) {

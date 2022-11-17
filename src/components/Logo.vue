@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title">
+  <h1 class="title u-hidden">
     Covid trends
     <img src="/public/assets/images/icon.png" alt="icon">
   </h1>

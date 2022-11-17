@@ -1,12 +1,24 @@
 export default {
   content: [
     {
+      week: "2020-01-01",
+      sport: "0",
+      vaccine: "0",
+      streaming: "0",
+      confinement: "0",
+      recipe: "0",
+      isLockdown: false,
+      event: {}
+    },
+    {
       week: "2020-01-05",
       sport: "14",
       vaccine: "1",
       streaming: "24",
       confinement: "1",
-      recipe: "34"
+      recipe: "34",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-01-12",
@@ -14,7 +26,9 @@ export default {
       vaccine: "2",
       streaming: "23",
       confinement: "1",
-      recipe: "33"
+      recipe: "33",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-01-19",
@@ -22,7 +36,9 @@ export default {
       vaccine: "2",
       streaming: "24",
       confinement: "1",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-01-26",
@@ -30,7 +46,9 @@ export default {
       vaccine: "2",
       streaming: "24",
       confinement: "1",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-02-02",
@@ -38,7 +56,9 @@ export default {
       vaccine: "2",
       streaming: "23",
       confinement: "1",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-02-09",
@@ -46,7 +66,9 @@ export default {
       vaccine: "2",
       streaming: "23",
       confinement: "1",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-02-16",
@@ -54,7 +76,9 @@ export default {
       vaccine: "1",
       streaming: "29",
       confinement: "1",
-      recipe: "35"
+      recipe: "35",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-02-23",
@@ -62,7 +86,9 @@ export default {
       vaccine: "2",
       streaming: "28",
       confinement: "1",
-      recipe: "35"
+      recipe: "35",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-03-01",
@@ -70,7 +96,9 @@ export default {
       vaccine: "2",
       streaming: "24",
       confinement: "1",
-      recipe: "33"
+      recipe: "33",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-03-08",
@@ -78,7 +106,9 @@ export default {
       vaccine: "2",
       streaming: "24",
       confinement: "2",
-      recipe: "33"
+      recipe: "33",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-03-15",
@@ -86,7 +116,9 @@ export default {
       vaccine: "4",
       streaming: "33",
       confinement: "38",
-      recipe: "44"
+      recipe: "44",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-03-22",
@@ -94,7 +126,9 @@ export default {
       vaccine: "2",
       streaming: "35",
       confinement: "22",
-      recipe: "66"
+      recipe: "66",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2020-03-29",
@@ -102,7 +136,9 @@ export default {
       vaccine: "4",
       streaming: "34",
       confinement: "15",
-      recipe: "72"
+      recipe: "72",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2020-04-05",
@@ -110,7 +146,9 @@ export default {
       vaccine: "2",
       streaming: "30",
       confinement: "17",
-      recipe: "71"
+      recipe: "71",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2020-04-12",
@@ -118,7 +156,9 @@ export default {
       vaccine: "2",
       streaming: "31",
       confinement: "15",
-      recipe: "75"
+      recipe: "75",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2020-04-19",
@@ -126,7 +166,9 @@ export default {
       vaccine: "2",
       streaming: "29",
       confinement: "9",
-      recipe: "73"
+      recipe: "73",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2020-04-26",
@@ -134,7 +176,9 @@ export default {
       vaccine: "2",
       streaming: "28",
       confinement: "10",
-      recipe: "72"
+      recipe: "72",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2020-05-03",
@@ -142,7 +186,12 @@ export default {
       vaccine: "2",
       streaming: "25",
       confinement: "10",
-      recipe: "58"
+      recipe: "58",
+      isLockdown: false,
+      event: {
+        id: 0,
+        content: "La catégorie coiffure fait partie des termes les plus recherchés sur google en 2020"
+      }
     },
     {
       week: "2020-05-10",
@@ -150,7 +199,12 @@ export default {
       vaccine: "2",
       streaming: "21",
       confinement: "7",
-      recipe: "50"
+      recipe: "50",
+      isLockdown: false,
+      event: {
+        id: 0,
+        content: "La catégorie coiffure fait partie des termes les plus recherchés sur google en 2020"
+      }
     },
     {
       week: "2020-05-17",
@@ -158,7 +212,12 @@ export default {
       vaccine: "2",
       streaming: "21",
       confinement: "4",
-      recipe: "48"
+      recipe: "48",
+      isLockdown: false,
+      event: {
+        id: 0,
+        content: "La catégorie coiffure fait partie des termes les plus recherchés sur google en 2020"
+      }
     },
     {
       week: "2020-05-24",
@@ -166,7 +225,9 @@ export default {
       vaccine: "2",
       streaming: "17",
       confinement: "2",
-      recipe: "38"
+      recipe: "38",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-05-31",
@@ -174,7 +235,9 @@ export default {
       vaccine: "1",
       streaming: "19",
       confinement: "2",
-      recipe: "39"
+      recipe: "39",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-06-07",
@@ -182,7 +245,9 @@ export default {
       vaccine: "2",
       streaming: "19",
       confinement: "2",
-      recipe: "35"
+      recipe: "35",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-06-14",
@@ -190,7 +255,9 @@ export default {
       vaccine: "2",
       streaming: "18",
       confinement: "2",
-      recipe: "35"
+      recipe: "35",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-06-21",
@@ -198,7 +265,9 @@ export default {
       vaccine: "2",
       streaming: "17",
       confinement: "3",
-      recipe: "31"
+      recipe: "31",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-06-28",
@@ -206,7 +275,12 @@ export default {
       vaccine: "2",
       streaming: "17",
       confinement: "2",
-      recipe: "30"
+      recipe: "30",
+      isLockdown: false,
+      event: {
+        id: 1,
+        content: "103 jours de confinement en 2020"
+      }
     },
     {
       week: "2020-07-05",
@@ -214,7 +288,12 @@ export default {
       vaccine: "2",
       streaming: "16",
       confinement: "3",
-      recipe: "29"
+      recipe: "29",
+      isLockdown: false,
+      event: {
+        id: 1,
+        content: "103 jours de confinement en 2020"
+      }
     },
     {
       week: "2020-07-12",
@@ -222,7 +301,12 @@ export default {
       vaccine: "2",
       streaming: "18",
       confinement: "3",
-      recipe: "30"
+      recipe: "30",
+      isLockdown: false,
+      event: {
+        id: 1,
+        content: "103 jours de confinement en 2020"
+      }
     },
     {
       week: "2020-07-19",
@@ -230,7 +314,9 @@ export default {
       vaccine: "2",
       streaming: "17",
       confinement: "3",
-      recipe: "28"
+      recipe: "28",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-07-26",
@@ -238,7 +324,9 @@ export default {
       vaccine: "2",
       streaming: "18",
       confinement: "2",
-      recipe: "29"
+      recipe: "29",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-08-02",
@@ -246,7 +334,9 @@ export default {
       vaccine: "2",
       streaming: "18",
       confinement: "1",
-      recipe: "28"
+      recipe: "28",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-08-09",
@@ -254,7 +344,9 @@ export default {
       vaccine: "3",
       streaming: "23",
       confinement: "2",
-      recipe: "30"
+      recipe: "30",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-08-16",
@@ -262,7 +354,9 @@ export default {
       vaccine: "2",
       streaming: "21",
       confinement: "1",
-      recipe: "30"
+      recipe: "30",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-08-23",
@@ -270,7 +364,9 @@ export default {
       vaccine: "2",
       streaming: "19",
       confinement: "1",
-      recipe: "31"
+      recipe: "31",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-08-30",
@@ -278,7 +374,9 @@ export default {
       vaccine: "3",
       streaming: "18",
       confinement: "1",
-      recipe: "31"
+      recipe: "31",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-09-06",
@@ -286,7 +384,9 @@ export default {
       vaccine: "3",
       streaming: "16",
       confinement: "2",
-      recipe: "28"
+      recipe: "28",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-09-13",
@@ -294,7 +394,9 @@ export default {
       vaccine: "2",
       streaming: "19",
       confinement: "2",
-      recipe: "30"
+      recipe: "30",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-09-20",
@@ -302,7 +404,9 @@ export default {
       vaccine: "3",
       streaming: "17",
       confinement: "2",
-      recipe: "33"
+      recipe: "33",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-09-27",
@@ -310,7 +414,9 @@ export default {
       vaccine: "3",
       streaming: "16",
       confinement: "3",
-      recipe: "35"
+      recipe: "35",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-10-04",
@@ -318,7 +424,9 @@ export default {
       vaccine: "3",
       streaming: "16",
       confinement: "2",
-      recipe: "35"
+      recipe: "35",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-10-11",
@@ -326,7 +434,9 @@ export default {
       vaccine: "4",
       streaming: "18",
       confinement: "3",
-      recipe: "37"
+      recipe: "37",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-10-18",
@@ -334,7 +444,9 @@ export default {
       vaccine: "4",
       streaming: "22",
       confinement: "8",
-      recipe: "40"
+      recipe: "40",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-10-25",
@@ -342,7 +454,9 @@ export default {
       vaccine: "3",
       streaming: "22",
       confinement: "61",
-      recipe: "42"
+      recipe: "42",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2020-11-01",
@@ -350,7 +464,9 @@ export default {
       vaccine: "3",
       streaming: "20",
       confinement: "15",
-      recipe: "44"
+      recipe: "44",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2020-11-08",
@@ -358,7 +474,12 @@ export default {
       vaccine: "8",
       streaming: "22",
       confinement: "10",
-      recipe: "49"
+      recipe: "49",
+      isLockdown: true,
+      event: {
+        id: 2,
+        content: "Dérogation pour les chasseurs pendant le deuxième confinement"
+      }
     },
     {
       week: "2020-11-15",
@@ -366,7 +487,12 @@ export default {
       vaccine: "6",
       streaming: "20",
       confinement: "8",
-      recipe: "46"
+      recipe: "46",
+      isLockdown: true,
+      event: {
+        id: 2,
+        content: "Dérogation pour les chasseurs pendant le deuxième confinement"
+      }
     },
     {
       week: "2020-11-22",
@@ -374,7 +500,12 @@ export default {
       vaccine: "5",
       streaming: "19",
       confinement: "7",
-      recipe: "43"
+      recipe: "43",
+      isLockdown: true,
+      event: {
+        id: 2,
+        content: "Dérogation pour les chasseurs pendant le deuxième confinement"
+      }
     },
     {
       week: "2020-11-29",
@@ -382,7 +513,9 @@ export default {
       vaccine: "5",
       streaming: "18",
       confinement: "4",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2020-12-06",
@@ -390,7 +523,9 @@ export default {
       vaccine: "5",
       streaming: "19",
       confinement: "5",
-      recipe: "41"
+      recipe: "41",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2020-12-13",
@@ -398,7 +533,9 @@ export default {
       vaccine: "5",
       streaming: "19",
       confinement: "3",
-      recipe: "46"
+      recipe: "46",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2020-12-20",
@@ -406,7 +543,12 @@ export default {
       vaccine: "6",
       streaming: "23",
       confinement: "9",
-      recipe: "58"
+      recipe: "58",
+      isLockdown: false,
+      event: {
+        id: 3,
+        content: "rave party à Pont Réan le 31 décembre 2020"
+      }
     },
     {
       week: "2020-12-27",
@@ -414,7 +556,12 @@ export default {
       vaccine: "9",
       streaming: "24",
       confinement: "8",
-      recipe: "52"
+      recipe: "52",
+      isLockdown: false,
+      event: {
+        id: 3,
+        content: "rave party à Pont Réan le 31 décembre 2020"
+      }
     },
     {
       week: "2021-01-03",
@@ -422,7 +569,12 @@ export default {
       vaccine: "15",
       streaming: "21",
       confinement: "7",
-      recipe: "41"
+      recipe: "41",
+      isLockdown: false,
+      event: {
+        id: 3,
+        content: "rave party à Pont Réan le 31 décembre 2020"
+      }
     },
     {
       week: "2021-01-10",
@@ -430,7 +582,9 @@ export default {
       vaccine: "29",
       streaming: "20",
       confinement: "10",
-      recipe: "41"
+      recipe: "41",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-01-17",
@@ -438,7 +592,9 @@ export default {
       vaccine: "24",
       streaming: "19",
       confinement: "11",
-      recipe: "42"
+      recipe: "42",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-01-24",
@@ -446,7 +602,9 @@ export default {
       vaccine: "16",
       streaming: "18",
       confinement: "25",
-      recipe: "42"
+      recipe: "42",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-01-31",
@@ -454,7 +612,9 @@ export default {
       vaccine: "16",
       streaming: "18",
       confinement: "7",
-      recipe: "46"
+      recipe: "46",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-02-07",
@@ -462,7 +622,9 @@ export default {
       vaccine: "15",
       streaming: "19",
       confinement: "4",
-      recipe: "44"
+      recipe: "44",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-02-14",
@@ -470,7 +632,9 @@ export default {
       vaccine: "17",
       streaming: "20",
       confinement: "2",
-      recipe: "42"
+      recipe: "42",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-02-21",
@@ -478,7 +642,9 @@ export default {
       vaccine: "17",
       streaming: "18",
       confinement: "10",
-      recipe: "40"
+      recipe: "40",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-02-28",
@@ -486,7 +652,9 @@ export default {
       vaccine: "23",
       streaming: "18",
       confinement: "9",
-      recipe: "39"
+      recipe: "39",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-03-07",
@@ -494,7 +662,9 @@ export default {
       vaccine: "29",
       streaming: "18",
       confinement: "5",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-03-14",
@@ -502,7 +672,12 @@ export default {
       vaccine: "26",
       streaming: "18",
       confinement: "21",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {
+        id: 4,
+        content: "les dauphins dans la lagune de Venise en italie le 22 mars 2021"
+      }
     },
     {
       week: "2021-03-21",
@@ -510,7 +685,12 @@ export default {
       vaccine: "34",
       streaming: "17",
       confinement: "17",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {
+        id: 4,
+        content: "les dauphins dans la lagune de Venise en italie le 22 mars 2021"
+      }
     },
     {
       week: "2021-03-28",
@@ -518,7 +698,12 @@ export default {
       vaccine: "34",
       streaming: "15",
       confinement: "25",
-      recipe: "35"
+      recipe: "35",
+      isLockdown: false,
+      event: {
+        id: 4,
+        content: "les dauphins dans la lagune de Venise en italie le 22 mars 2021"
+      }
     },
     {
       week: "2021-04-04",
@@ -526,7 +711,9 @@ export default {
       vaccine: "35",
       streaming: "21",
       confinement: "6",
-      recipe: "37"
+      recipe: "37",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2021-04-11",
@@ -534,7 +721,9 @@ export default {
       vaccine: "48",
       streaming: "20",
       confinement: "4",
-      recipe: "45"
+      recipe: "45",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2021-04-18",
@@ -542,7 +731,9 @@ export default {
       vaccine: "33",
       streaming: "18",
       confinement: "4",
-      recipe: "39"
+      recipe: "39",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2021-04-25",
@@ -550,7 +741,9 @@ export default {
       vaccine: "35",
       streaming: "19",
       confinement: "3",
-      recipe: "41"
+      recipe: "41",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2021-05-02",
@@ -558,7 +751,9 @@ export default {
       vaccine: "39",
       streaming: "18",
       confinement: "2",
-      recipe: "33"
+      recipe: "33",
+      isLockdown: true,
+      event: {}
     },
     {
       week: "2021-05-09",
@@ -566,7 +761,9 @@ export default {
       vaccine: "48",
       streaming: "16",
       confinement: "1",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-05-16",
@@ -574,7 +771,9 @@ export default {
       vaccine: "42",
       streaming: "15",
       confinement: "1",
-      recipe: "30"
+      recipe: "30",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-05-23",
@@ -582,7 +781,9 @@ export default {
       vaccine: "37",
       streaming: "16",
       confinement: "1",
-      recipe: "29"
+      recipe: "29",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-05-30",
@@ -590,7 +791,9 @@ export default {
       vaccine: "38",
       streaming: "14",
       confinement: "1",
-      recipe: "25"
+      recipe: "25",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-06-06",
@@ -598,7 +801,9 @@ export default {
       vaccine: "29",
       streaming: "15",
       confinement: "1",
-      recipe: "23"
+      recipe: "23",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-06-13",
@@ -606,7 +811,9 @@ export default {
       vaccine: "25",
       streaming: "16",
       confinement: "1",
-      recipe: "23"
+      recipe: "23",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-06-20",
@@ -614,7 +821,9 @@ export default {
       vaccine: "22",
       streaming: "16",
       confinement: "1",
-      recipe: "24"
+      recipe: "24",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-06-27",
@@ -622,7 +831,9 @@ export default {
       vaccine: "26",
       streaming: "16",
       confinement: "1",
-      recipe: "23"
+      recipe: "23",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-07-04",
@@ -630,7 +841,12 @@ export default {
       vaccine: "30",
       streaming: "15",
       confinement: "2",
-      recipe: "24"
+      recipe: "24",
+      isLockdown: false,
+      event: {
+        id: 5,
+        content: "Pourquoi les tronçonneuses ont été inventées fait partie des recherches les plus tapées sur google en 2021"
+      }
     },
     {
       week: "2021-07-11",
@@ -638,7 +854,12 @@ export default {
       vaccine: "100",
       streaming: "17",
       confinement: "1",
-      recipe: "25"
+      recipe: "25",
+      isLockdown: false,
+      event: {
+        id: 5,
+        content: "Pourquoi les tronçonneuses ont été inventées fait partie des recherches les plus tapées sur google en 2021"
+      }
     },
     {
       week: "2021-07-18",
@@ -646,7 +867,12 @@ export default {
       vaccine: "65",
       streaming: "16",
       confinement: "1",
-      recipe: "24"
+      recipe: "24",
+      isLockdown: false,
+      event: {
+        id: 5,
+        content: "Pourquoi les tronçonneuses ont été inventées fait partie des recherches les plus tapées sur google en 2021"
+      }
     },
     {
       week: "2021-07-25",
@@ -654,7 +880,9 @@ export default {
       vaccine: "48",
       streaming: "17",
       confinement: "1",
-      recipe: "25"
+      recipe: "25",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-08-01",
@@ -662,7 +890,9 @@ export default {
       vaccine: "44",
       streaming: "17",
       confinement: "1",
-      recipe: "28"
+      recipe: "28",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-08-08",
@@ -670,7 +900,9 @@ export default {
       vaccine: "35",
       streaming: "18",
       confinement: "1",
-      recipe: "28"
+      recipe: "28",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-08-15",
@@ -678,7 +910,9 @@ export default {
       vaccine: "27",
       streaming: "18",
       confinement: "1",
-      recipe: "29"
+      recipe: "29",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-08-22",
@@ -686,7 +920,9 @@ export default {
       vaccine: "24",
       streaming: "19",
       confinement: "1",
-      recipe: "29"
+      recipe: "29",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-08-29",
@@ -694,7 +930,9 @@ export default {
       vaccine: "23",
       streaming: "17",
       confinement: "1",
-      recipe: "28"
+      recipe: "28",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-09-05",
@@ -702,7 +940,9 @@ export default {
       vaccine: "16",
       streaming: "15",
       confinement: "1",
-      recipe: "26"
+      recipe: "26",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-09-12",
@@ -710,7 +950,9 @@ export default {
       vaccine: "15",
       streaming: "16",
       confinement: "1",
-      recipe: "28"
+      recipe: "28",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-09-19",
@@ -718,7 +960,9 @@ export default {
       vaccine: "10",
       streaming: "15",
       confinement: "1",
-      recipe: "28"
+      recipe: "28",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-09-26",
@@ -726,7 +970,9 @@ export default {
       vaccine: "10",
       streaming: "15",
       confinement: "1",
-      recipe: "31"
+      recipe: "31",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-10-03",
@@ -734,7 +980,9 @@ export default {
       vaccine: "10",
       streaming: "13",
       confinement: "1",
-      recipe: "31"
+      recipe: "31",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-10-10",
@@ -742,7 +990,9 @@ export default {
       vaccine: "11",
       streaming: "15",
       confinement: "1",
-      recipe: "32"
+      recipe: "32",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-10-17",
@@ -750,7 +1000,9 @@ export default {
       vaccine: "11",
       streaming: "17",
       confinement: "1",
-      recipe: "33"
+      recipe: "33",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-10-24",
@@ -758,7 +1010,9 @@ export default {
       vaccine: "10",
       streaming: "19",
       confinement: "1",
-      recipe: "35"
+      recipe: "35",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-10-31",
@@ -766,7 +1020,9 @@ export default {
       vaccine: "10",
       streaming: "18",
       confinement: "1",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-11-07",
@@ -774,7 +1030,9 @@ export default {
       vaccine: "16",
       streaming: "15",
       confinement: "1",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-11-14",
@@ -782,7 +1040,9 @@ export default {
       vaccine: "17",
       streaming: "14",
       confinement: "2",
-      recipe: "34"
+      recipe: "34",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-11-21",
@@ -790,7 +1050,9 @@ export default {
       vaccine: "36",
       streaming: "15",
       confinement: "1",
-      recipe: "33"
+      recipe: "33",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-11-28",
@@ -798,7 +1060,9 @@ export default {
       vaccine: "36",
       streaming: "14",
       confinement: "1",
-      recipe: "32"
+      recipe: "32",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-12-05",
@@ -806,7 +1070,9 @@ export default {
       vaccine: "33",
       streaming: "14",
       confinement: "1",
-      recipe: "34"
+      recipe: "34",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-12-12",
@@ -814,7 +1080,9 @@ export default {
       vaccine: "36",
       streaming: "16",
       confinement: "1",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-12-19",
@@ -822,7 +1090,9 @@ export default {
       vaccine: "30",
       streaming: "21",
       confinement: "2",
-      recipe: "51"
+      recipe: "51",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2021-12-26",
@@ -830,7 +1100,9 @@ export default {
       vaccine: "28",
       streaming: "21",
       confinement: "1",
-      recipe: "43"
+      recipe: "43",
+      isLockdown: false,
+      event: {}
     },
     {
       week: "2022-01-02",
@@ -838,359 +1110,9 @@ export default {
       vaccine: "33",
       streaming: "19",
       confinement: "1",
-      recipe: "36"
+      recipe: "36",
+      isLockdown: false,
+      event: {}
     },
-    {
-      week: "2022-01-09",
-      sport: "13",
-      vaccine: "24",
-      streaming: "21",
-      confinement: "1",
-      recipe: "36"
-    },
-    {
-      week: "2022-01-16",
-      sport: "12",
-      vaccine: "30",
-      streaming: "19",
-      confinement: "1",
-      recipe: "33"
-    },
-    {
-      week: "2022-01-23",
-      sport: "13",
-      vaccine: "15",
-      streaming: "19",
-      confinement: "1",
-      recipe: "36"
-    },
-    {
-      week: "2022-01-30",
-      sport: "13",
-      vaccine: "14",
-      streaming: "17",
-      confinement: "1",
-      recipe: "41"
-    },
-    {
-      week: "2022-02-06",
-      sport: "13",
-      vaccine: "11",
-      streaming: "18",
-      confinement: "1",
-      recipe: "35"
-    },
-    {
-      week: "2022-02-13",
-      sport: "14",
-      vaccine: "9",
-      streaming: "21",
-      confinement: "1",
-      recipe: "36"
-    },
-    {
-      week: "2022-02-20",
-      sport: "13",
-      vaccine: "7",
-      streaming: "18",
-      confinement: "1",
-      recipe: "34"
-    },
-    {
-      week: "2022-02-27",
-      sport: "12",
-      vaccine: "6",
-      streaming: "17",
-      confinement: "1",
-      recipe: "33"
-    },
-    {
-      week: "2022-03-06",
-      sport: "14",
-      vaccine: "5",
-      streaming: "16",
-      confinement: "1",
-      recipe: "31"
-    },
-    {
-      week: "2022-03-13",
-      sport: "14",
-      vaccine: "5",
-      streaming: "17",
-      confinement: "1",
-      recipe: "31"
-    },
-    {
-      week: "2022-03-20",
-      sport: "13",
-      vaccine: "5",
-      streaming: "15",
-      confinement: "1",
-      recipe: "31"
-    },
-    {
-      week: "2022-03-27",
-      sport: "12",
-      vaccine: "5",
-      streaming: "14",
-      confinement: "1",
-      recipe: "31"
-    },
-    {
-      week: "2022-04-03",
-      sport: "12",
-      vaccine: "5",
-      streaming: "15",
-      confinement: "1",
-      recipe: "34"
-    },
-    {
-      week: "2022-04-10",
-      sport: "12",
-      vaccine: "5",
-      streaming: "15",
-      confinement: "1",
-      recipe: "33"
-    },
-    {
-      week: "2022-04-17",
-      sport: "12",
-      vaccine: "4",
-      streaming: "17",
-      confinement: "1",
-      recipe: "32"
-    },
-    {
-      week: "2022-04-24",
-      sport: "12",
-      vaccine: "4",
-      streaming: "16",
-      confinement: "1",
-      recipe: "32"
-    },
-    {
-      week: "2022-05-01",
-      sport: "12",
-      vaccine: "4",
-      streaming: "15",
-      confinement: "1",
-      recipe: "28"
-    },
-    {
-      week: "2022-05-08",
-      sport: "12",
-      vaccine: "4",
-      streaming: "13",
-      confinement: "1",
-      recipe: "25"
-    },
-    {
-      week: "2022-05-15",
-      sport: "12",
-      vaccine: "4",
-      streaming: "13",
-      confinement: "1",
-      recipe: "25"
-    },
-    {
-      week: "2022-05-22",
-      sport: "13",
-      vaccine: "4",
-      streaming: "16",
-      confinement: "1",
-      recipe: "30"
-    },
-    {
-      week: "2022-05-29",
-      sport: "12",
-      vaccine: "3",
-      streaming: "14",
-      confinement: "1",
-      recipe: "26"
-    },
-    {
-      week: "2022-06-05",
-      sport: "11",
-      vaccine: "3",
-      streaming: "14",
-      confinement: "1",
-      recipe: "29"
-    },
-    {
-      week: "2022-06-12",
-      sport: "11",
-      vaccine: "3",
-      streaming: "13",
-      confinement: "1",
-      recipe: "27"
-    },
-    {
-      week: "2022-06-19",
-      sport: "10",
-      vaccine: "4",
-      streaming: "14",
-      confinement: "1",
-      recipe: "27"
-    },
-    {
-      week: "2022-06-26",
-      sport: "10",
-      vaccine: "6",
-      streaming: "14",
-      confinement: "1",
-      recipe: "29"
-    },
-    {
-      week: "2022-07-03",
-      sport: "10",
-      vaccine: "6",
-      streaming: "13",
-      confinement: "1",
-      recipe: "27"
-    },
-    {
-      week: "2022-07-10",
-      sport: "10",
-      vaccine: "5",
-      streaming: "14",
-      confinement: "1",
-      recipe: "28"
-    },
-    {
-      week: "2022-07-17",
-      sport: "10",
-      vaccine: "4",
-      streaming: "14",
-      confinement: "1",
-      recipe: "28"
-    },
-    {
-      week: "2022-07-24",
-      sport: "10",
-      vaccine: "4",
-      streaming: "14",
-      confinement: "1",
-      recipe: "30"
-    },
-    {
-      week: "2022-07-31",
-      sport: "11",
-      vaccine: "3",
-      streaming: "14",
-      confinement: "1",
-      recipe: "29"
-    },
-    {
-      week: "2022-08-07",
-      sport: "11",
-      vaccine: "3",
-      streaming: "15",
-      confinement: "1",
-      recipe: "30"
-    },
-    {
-      week: "2022-08-14",
-      sport: "12",
-      vaccine: "3",
-      streaming: "15",
-      confinement: "1",
-      recipe: "33"
-    },
-    {
-      week: "2022-08-21",
-      sport: "13",
-      vaccine: "3",
-      streaming: "16",
-      confinement: "1",
-      recipe: "31"
-    },
-    {
-      week: "2022-08-28",
-      sport: "17",
-      vaccine: "3",
-      streaming: "15",
-      confinement: "1",
-      recipe: "30"
-    },
-    {
-      week: "2022-09-04",
-      sport: "16",
-      vaccine: "3",
-      streaming: "14",
-      confinement: "1",
-      recipe: "28"
-    },
-    {
-      week: "2022-09-11",
-      sport: "15",
-      vaccine: "3",
-      streaming: "13",
-      confinement: "1",
-      recipe: "31"
-    },
-    {
-      week: "2022-09-18",
-      sport: "13",
-      vaccine: "3",
-      streaming: "13",
-      confinement: "1",
-      recipe: "33"
-    },
-    {
-      week: "2022-09-25",
-      sport: "12",
-      vaccine: "3",
-      streaming: "13",
-      confinement: "1",
-      recipe: "34"
-    },
-    {
-      week: "2022-10-02",
-      sport: "13",
-      vaccine: "3",
-      streaming: "14",
-      confinement: "1",
-      recipe: "35"
-    },
-    {
-      week: "2022-10-09",
-      sport: "12",
-      vaccine: "3",
-      streaming: "13",
-      confinement: "1",
-      recipe: "36"
-    },
-    {
-      week: "2022-10-16",
-      sport: "12",
-      vaccine: "4",
-      streaming: "15",
-      confinement: "1",
-      recipe: "36"
-    },
-    {
-      week: "2022-10-23",
-      sport: "12",
-      vaccine: "3",
-      streaming: "15",
-      confinement: "1",
-      recipe: "37"
-    },
-    {
-      week: "2022-10-30",
-      sport: "11",
-      vaccine: "3",
-      streaming: "16",
-      confinement: "1",
-      recipe: "42"
-    },
-    {
-      week: "2022-11-06",
-      sport: "11",
-      vaccine: "3",
-      streaming: "12",
-      confinement: "1",
-      recipe: "37"
-    }
   ]
 }
