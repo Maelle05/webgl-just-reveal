@@ -201,9 +201,6 @@ export default class Flor {
         }
     }
 
-    console.log(this.mountPeaks);
-    console.log(this.peaks);
-
     this.scene.add(this.instMesh, this.topInstMesh);
   }
 
