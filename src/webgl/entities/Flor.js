@@ -427,4 +427,8 @@ export default class Flor {
       this.isAnimated = true;
     }
   }
+
+  isLighthouseRayc(){
+    return this.lighthouses.includes(this.currentIntersectId)
+  }
 }

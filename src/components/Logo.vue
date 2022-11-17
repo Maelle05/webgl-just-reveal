@@ -17,7 +17,7 @@
 
   img {
     aspect-ratio: 8 / 11;
-    height: 22px;
+    height: 32px;
   }
 }
 </style>
