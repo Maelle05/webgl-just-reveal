@@ -24,7 +24,10 @@ export default class Flor {
     this.topInstMesh = new THREE.InstancedMesh( topGeometry, topMaterial, count );
 
 
-    this.peaks = [3550, 4465, 4840, 5250, 6350]
+    //confinement - recette - sport - streaming - vaccin
+    // [5136, 5547, 5163, 3960, 3443]
+    // [3443, 3960, 5136, 5163, 5547]
+    this.peaks = [3443, 3960, 5136, 5662, 6349]
     this.colorsPeaks = [ 'F72585', '7209B7', '3A0CA3', '4361EE', '4CC9F0' ] 
     this.lighthouses = 5470
     this.peakElevation = [0, 0, 0, 0, 0]
@@ -139,6 +142,7 @@ export default class Flor {
 
         if (this.intersects && this.intersects.length >= 1) {
           this.currentIntersectId = this.intersects[0].instanceId
+          console.log(this.currentIntersectId)
         } else {
           this.currentIntersectId = null
         }
