@@ -35,7 +35,8 @@ const hideModal = () => {
   introductionRef.value.classList.add('u-hidden')
 
   setTimeout(() => {
-    document.getElementsByClassName('timeline')[0].classList.remove('u-hidden')
+    document.getElementsByClassName('timeline__header')[0].classList.remove('u-hidden')
+    document.getElementsByClassName('timeline__container')[0].classList.remove('u-hidden')
     document.getElementsByClassName('title')[0].classList.remove('u-hidden')
     document.getElementsByClassName('scroll')[0].classList.remove('u-hidden')
   }, 500)
