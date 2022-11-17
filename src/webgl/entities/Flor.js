@@ -12,7 +12,7 @@ export default class Flor {
     this.dummy =  new THREE.Object3D();
     this.topDummy =  new THREE.Object3D();
     this.color = new THREE.Color()
-    
+
 		const count = Math.pow( this.amount, 2 );
 
     const geometry = new THREE.BoxGeometry( this.size, this.size * 10, this.size  );
@@ -28,7 +28,7 @@ export default class Flor {
     // [5136, 5547, 5163, 3960, 3443]
     // [3443, 3960, 5136, 5163, 5547]
     this.peaks = [3443, 3960, 5136, 5662, 6349]
-    this.colorsPeaks = [ 'F72585', '7209B7', '3A0CA3', '4361EE', '4CC9F0' ] 
+    this.colorsPeaks = [ 'F72585', '7209B7', '3A0CA3', '4361EE', '4CC9F0' ]
     this.lighthouses = 5470
     this.peakElevation = [0, 0, 0, 0, 0]
     this.peakTargetElevation = [0, 0, 0, 0, 0]
@@ -51,7 +51,7 @@ export default class Flor {
 
           for (let m = 0;  m < mountPeak[mountPeak.length-1].length; m++) {
             const upID = mountPeak[mountPeak.length-1][m]
-            
+
             const haut = upID - 1
             const droite = upID + this.amount
             const bas = upID + 1
@@ -63,7 +63,7 @@ export default class Flor {
             if(!this.peaks.includes(gauche) && !mountPeak[mountPeak.length-1].includes(gauche)) circleMountPeak.push(gauche)
           }
         }
-        
+
         mountPeak.push(circleMountPeak)
       }
       this.mountPeaks.push(mountPeak)
@@ -95,7 +95,7 @@ export default class Flor {
           topMatrix.setPosition( this.offset - x, 4.3, this.offset - z );
           this.instMesh.setMatrixAt( i, matrix );
           this.topInstMesh.setMatrixAt ( i, topMatrix);
-          
+
           if (this.isPeak(i)) {
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
             this.topInstMesh.setColorAt( i, this.color.setHex( '0x' + this.colorsPeaks[peaksStep] ) );
@@ -104,7 +104,7 @@ export default class Flor {
             this.topInstMesh.setColorAt( i, this.color.setHex( 0xffffff ) );
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
           }
-          
+
           i ++;
         }
     }
@@ -130,7 +130,7 @@ export default class Flor {
         THREE.MathUtils.lerp(this.peakElevation[4], this.peakTargetElevation[4], 0.1),
       ]
     }
-    
+
     let peaksStep = 0
     if(this.instMesh){
       let i = 0;
@@ -142,12 +142,12 @@ export default class Flor {
 
         if (this.intersects && this.intersects.length >= 1) {
           this.currentIntersectId = this.intersects[0].instanceId
-          console.log(this.currentIntersectId)
+          // console.log(this.currentIntersectId)
         } else {
           this.currentIntersectId = null
         }
       }
-      
+
 
       for ( let x = 0; x < this.amount; x ++ ) {
         for ( let z = 0; z < this.amount; z ++ ) {
@@ -176,18 +176,18 @@ export default class Flor {
           if(i ===  this.lighthouses){
             y += this.peakElevation[0]
           }
-          
+
           for (let m = 0; m < this.mountPeaks.length; m++) {
             for (let r = 0; r < this.mountPeaks[m].length; r++) {
               if(this.mountPeaks[m][r].includes(i)){
                 y += this.peakElevation[m]*(0.6/(r+1));
-                
+
                 this.topInstMesh.setColorAt( i, this.color.setHex( this.getColorDegrade(this.colorsPeaks[m], r) ) );
               }
             }
           }
-          
-          
+
+
           this.dummy.position.set( this.offset - x, y, this.offset - z );
           this.dummy.updateMatrix();
 

@@ -2,14 +2,16 @@
 import Logo from './components/Logo.vue'
 import Scene from '../src/webgl/Scene'
 import Introduction from '@/components/Introduction.vue'
+import DynamiqueTimeline from '@/components/DynamiqueTimeline.vue'
 
 </script>
 
 <template>
   <header>
-    <!-- <Introduction/> -->
     <Logo />
   </header>
+<!--  <Introduction/>-->
+  <DynamiqueTimeline/>
 </template>
 
 <script>
