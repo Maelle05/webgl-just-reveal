@@ -18,7 +18,7 @@ export default class Flor {
     const material = new THREE.MeshStandardMaterial( { color: 0xffffff, wireframe: false } );
     this.instMesh = new THREE.InstancedMesh( geometry, material, count );
 
-    const topGeometry =  new THREE.BoxGeometry( this.size + 0.1, 0.10, this.size + 0.1 );
+    const topGeometry =  new THREE.BoxGeometry( this.size + 0.01, 0.10, this.size + 0.01 );
     const topMaterial =  new THREE.MeshBasicMaterial( { color: 0xAfAfAf, wireframe: false } );
     this.topInstMesh = new THREE.InstancedMesh( topGeometry, topMaterial, count );
 
@@ -91,12 +91,12 @@ export default class Flor {
           this.topInstMesh.setMatrixAt ( i, topMatrix);
           
           if (this.isPeak(i)) {
-            this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
+            this.instMesh.setColorAt( i, this.color.setHex( 0xffffff ) );
             this.topInstMesh.setColorAt( i, this.color.setHex( this.colorsPeaks[peaksStep] ) );
             peaksStep++
           } else {
-            this.topInstMesh.setColorAt( i, this.color.setHex( 0xffffff ) );
-            this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
+            this.topInstMesh.setColorAt( i, this.color.setHex( 0xff0000 ) );
+            this.instMesh.setColorAt( i, this.color.setHex(  0xffffff ) );
           }
           
           i ++;
@@ -124,10 +124,10 @@ export default class Flor {
         for ( let z = 0; z < this.amount; z ++ ) {
 
           if (i === this.currentIntersectId) {
-            this.instMesh.setColorAt(i, new THREE.Color("#ffffff"))
+            this.instMesh.setColorAt(i, new THREE.Color("#ff0000"))
             this.instMesh.instanceColor.needsUpdate = true
           } else {
-            this.instMesh.setColorAt(i, new THREE.Color("#363636"))
+            this.instMesh.setColorAt(i, new THREE.Color("#efefef"))
             this.instMesh.instanceColor.needsUpdate = true
           }
 
