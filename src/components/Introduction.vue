@@ -2,12 +2,12 @@
   <section class="introduction" ref="introductionRef">
     <div class="introduction__content">
       Covid trends
-      <svg width="86" height="119" viewBox="0 0 86 119" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="48.375" width="21.5" height="69.875" fill="white"/>
-        <rect x="32.25" width="21.5" height="118.25" fill="white"/>
-        <rect x="64.5" y="26.875" width="21.5" height="91.375" fill="white"/>
-      </svg>
 
+      <svg class="introduction__logo" width="86" height="119" viewBox="0 0 86 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect class="loading__left" y="48.375" width="21.5" height="69.875" fill="#7209B7"/>
+        <rect class="loading__middle" x="32.25" width="21.5" height="118.25" fill="#7209B7"/>
+        <rect class="loading__right" x="64.5" y="26.875" width="21.5" height="91.375" fill="#7209B7"/>
+      </svg>
 
     </div>
 
@@ -56,6 +56,49 @@ const hideModal = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &__logo {
+
+    .loading {
+      &__left {
+        transform-origin: bottom;
+        animation: loading-bar-morph 1.5s linear .1s infinite
+      }
+
+      &__middle {
+        transform-origin: bottom;
+        animation: loading-bar-morph 1.5s linear .2s infinite
+      }
+
+      &__right {
+        transform-origin: bottom;
+        animation: loading-bar-morph 1.5s linear .4s infinite
+
+
+      }
+    }
+
+    @keyframes loading-bar-morph{
+      0% {
+        transform: scaleY(1);
+        fill: #F72585;
+
+      }
+      25% {
+        transform: scaleY(0.3);
+        fill: #3A0CA3;
+      }
+      50% {
+        transform: scaleY(0.7);
+        fill: #4CC9F0;
+
+      }
+      75% {
+        transform: scaleY(0.15);
+        fill: #7209B7;
+      }
+    }
+  }
 
   &__label {
     margin-bottom: 3%;
