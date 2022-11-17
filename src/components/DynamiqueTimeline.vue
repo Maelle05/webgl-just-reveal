@@ -26,13 +26,16 @@ export default {
   mounted() {
     const myScene = new Scene()
 
-    this.scrollValue = myScene.webgl.scroll.getDataValue()
+    setInterval(() => {
+      this.getData = myScene.webgl.scroll.getDataValue()
 
-    this.date = new Date(this.scrollValue.week)
-    const month = ["janvier", "février", "mars", "avril", "mai", "juin",
-      "juillet", "août", "septembre", "octobre", "novembre", "décembre"][this.date.getMonth()]
-    this.scrollValue.week = this.date.getDate() + ' ' + month + ' ' + this.date.getFullYear()
+     // todo mettre dans un utils
+      this.date = new Date(this.getData.week)
+      this.month = ["janvier", "février", "mars", "avril", "mai", "juin",
+        "juillet", "août", "septembre", "octobre", "novembre", "décembre"][this.date.getMonth()]
+      this.scrollValue.week = this.date.getDate() + ' ' + this.month + ' ' + this.date.getFullYear()
 
+    }, 500)
   }
 }
 </script>
