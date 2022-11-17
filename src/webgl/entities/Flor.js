@@ -15,7 +15,7 @@ export default class Flor {
 
 		const count = Math.pow( this.amount, 2 );
 
-    const geometry = new THREE.BoxGeometry( this.size, this.size * 6, this.size  );
+    const geometry = new THREE.BoxGeometry( this.size, this.size * 10, this.size  );
     const material = new THREE.MeshStandardMaterial( { color: 0xffffff, wireframe: false } );
     this.instMesh = new THREE.InstancedMesh( geometry, material, count );
 
@@ -87,7 +87,7 @@ export default class Flor {
     for ( let x = 0; x < this.amount; x ++ ) {
         for ( let z = 0; z < this.amount; z ++ ) {
           matrix.setPosition( this.offset - x, 0, this.offset - z );
-          topMatrix.setPosition( this.offset - x, 3.5, this.offset - z );
+          topMatrix.setPosition( this.offset - x, 4.3, this.offset - z );
           this.instMesh.setMatrixAt( i, matrix );
           this.topInstMesh.setMatrixAt ( i, topMatrix);
 
@@ -108,12 +108,13 @@ export default class Flor {
   }
 
   update(){
+    const data = this.scroll.getDataValue()
     this.peakTargetElevation = [
-      this.scroll.getDataValue().confinement * 0.1,
-      this.scroll.getDataValue().recipe * 0.1,
-      this.scroll.getDataValue().sport * 0.1,
-      this.scroll.getDataValue().streaming * 0.1,
-      this.scroll.getDataValue().vaccine * 0.1,
+      data.confinement ? data.confinement * 0.1 : 0,
+      data.recipe ? data.recipe * 0.1 : 0,
+      data.sport ? data.sport * 0.1 : 0,
+      data.streaming ? data.streaming * 0.1 : 0,
+      data.vaccine ? data.vaccine * 0.1 : 0,
     ]
     this.peakElevation = [
       THREE.MathUtils.lerp(this.peakElevation[0], this.peakTargetElevation[0], 0.1),
@@ -173,7 +174,7 @@ export default class Flor {
           this.dummy.position.set( this.offset - x, y, this.offset - z );
           this.dummy.updateMatrix();
 
-          this.topDummy.position.set(this.offset - x, y +  2.5, this.offset - z)
+          this.topDummy.position.set(this.offset - x, y +  4.3, this.offset - z)
           this.topDummy.updateMatrix();
 
           this.topInstMesh.setMatrixAt( i, this.topDummy.matrix );
