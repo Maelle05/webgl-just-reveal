@@ -1,12 +1,12 @@
 <template>
-  <div class="timeline u-hidden">
-    <div class="timeline__header">
+  <div class="timeline">
+    <div class="timeline__header u-hidden">
       <h2 class="timeline__date">{{ scrollValue.week }}</h2>
       <p v-if="scrollValue.isLockdown === true" class="timeline__label">Confinement</p>
       <div v-if="scrollValue.isLockdown === true" class="timeline__label--underline"/>
     </div>
 
-    <div class="timeline__container">
+    <div class="timeline__container u-hidden">
       <div class="timeline__year">
         <p>2020</p>
         <p>2022</p>

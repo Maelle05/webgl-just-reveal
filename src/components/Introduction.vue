@@ -35,8 +35,10 @@ const hideModal = () => {
   introductionRef.value.classList.add('u-hidden')
 
   setTimeout(() => {
-    document.getElementsByClassName('timeline')[0].classList.remove('u-hidden')
+    document.getElementsByClassName('timeline__header')[0].classList.remove('u-hidden')
+    document.getElementsByClassName('timeline__container')[0].classList.remove('u-hidden')
     document.getElementsByClassName('title')[0].classList.remove('u-hidden')
+    document.getElementsByClassName('scroll')[0].classList.remove('u-hidden')
   }, 500)
 }
 </script>
@@ -62,23 +64,21 @@ const hideModal = () => {
     .loading {
       &__left {
         transform-origin: bottom;
-        animation: loading-bar-morph 1.5s linear .1s infinite
+        animation: morph 2.2s linear .1s infinite
       }
 
       &__middle {
         transform-origin: bottom;
-        animation: loading-bar-morph 1.5s linear .2s infinite
+        animation: morph 2.2s linear .2s infinite
       }
 
       &__right {
         transform-origin: bottom;
-        animation: loading-bar-morph 1.5s linear .4s infinite
-
-
+        animation: morph 2.2s linear .4s infinite
       }
     }
 
-    @keyframes loading-bar-morph{
+    @keyframes morph{
       0% {
         transform: scaleY(1);
         fill: #F72585;
@@ -102,7 +102,7 @@ const hideModal = () => {
 
   &__label {
     margin-bottom: 3%;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   &__content {
@@ -141,6 +141,7 @@ const hideModal = () => {
     font-size: 16px;
     font-weight: 300;
     cursor: pointer;
+    border: none;
   }
 }
 </style>

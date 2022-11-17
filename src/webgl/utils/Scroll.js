@@ -13,6 +13,11 @@ export default class Scroll extends EventEmitter {
     document.querySelector('.introduction__button').addEventListener("click", ()=>{
       window.addEventListener("mousewheel", (e) => {
         this.scrollUpdate(e);
+
+        setTimeout(() => {
+          document.getElementsByClassName('scroll')[0].classList.add('u-hidden')
+
+        }, 700)
       });
     })
   }
@@ -61,4 +66,5 @@ export default class Scroll extends EventEmitter {
   lerp(start, end, amt) {
     return (1 - amt) * start + amt * end;
   }
+  
 }
