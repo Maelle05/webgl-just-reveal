@@ -35,17 +35,29 @@ export default class WebGlManager {
       // My Scene object
       this.world = new Scene()
 
+      this.zoom = 1.5;
+
       // Camera
       // this.camera = new THREE.OrthographicCamera( this.sizes.width / - 2, this.sizes.width / 2, this.sizes.height / 2, this.sizes.height / - 2, 1, 1000 )
       this.camera = new THREE.PerspectiveCamera(35, this.sizes.width / this.sizes.height, 0.5, 700)
-      this.camera.position.set(20, 15, 40)
-      this.camera.lookAt(20, 0, 20)
+      this.camera.position.set(23, 13, 34)
+      this.camera.lookAt(5, 2, 0)
       this.scene.add(this.camera)
 
+      if(this.debug.active) {
+        this.cameraFolder = this.debug.ui.addFolder('camera')
+        this.cameraFolder.add(this.camera.position, 'x', -50, 50, 1)
+        this.cameraFolder.add(this.camera.position, 'z', -50, 50, 1)
+        this.cameraFolder.add(this.camera.position, 'y', -50, 50, 1)
+        this.cameraFolder.add(this, 'zoom', -10, 10, 0.1)
+      }
+
+      
+
       // OrbitControls
-      this.controls = new OrbitControls(this.camera, this.canvas)
-      this.controls.enableDamping = true
-      this.controls.enabled = false
+      // this.controls = new OrbitControls(this.camera, this.canvas)
+      // this.controls.enableDamping = true
+      // this.controls.enabled = false
 
       // Renderer
       this.renderer = new THREE.WebGLRenderer({
@@ -78,7 +90,10 @@ export default class WebGlManager {
     }
 
     update(){
-      this.controls.update()
+      this.camera.lookAt(5, 2, 0)
+
+      
+      // this.controls.update()
       this.world.update()
       this.renderer.render(this.scene, this.camera)
     }
