@@ -188,7 +188,10 @@ export default {
       confinement: "10",
       recipe: "58",
       isLockdown: false,
-      event: {}
+      event: {
+        id: 0,
+        content: "La catégorie coiffure fait partie des termes les plus recherchés sur google en 2020"
+      }
     },
     {
       week: "2020-05-10",
@@ -211,7 +214,10 @@ export default {
       confinement: "4",
       recipe: "48",
       isLockdown: false,
-      event: {}
+      event: {
+        id: 0,
+        content: "La catégorie coiffure fait partie des termes les plus recherchés sur google en 2020"
+      }
     },
     {
       week: "2020-05-24",
@@ -271,7 +277,10 @@ export default {
       confinement: "2",
       recipe: "30",
       isLockdown: false,
-      event: {}
+      event: {
+        id: 1,
+        content: "103 jours de confinement en 2020"
+      }
     },
     {
       week: "2020-07-05",
@@ -294,7 +303,10 @@ export default {
       confinement: "3",
       recipe: "30",
       isLockdown: false,
-      event: {}
+      event: {
+        id: 1,
+        content: "103 jours de confinement en 2020"
+      }
     },
     {
       week: "2020-07-19",
@@ -464,7 +476,10 @@ export default {
       confinement: "10",
       recipe: "49",
       isLockdown: true,
-      event: {}
+      event: {
+        id: 2,
+        content: "Dérogation pour les chasseurs pendant le deuxième confinement"
+      }
     },
     {
       week: "2020-11-15",
@@ -487,7 +502,10 @@ export default {
       confinement: "7",
       recipe: "43",
       isLockdown: true,
-      event: {}
+      event: {
+        id: 2,
+        content: "Dérogation pour les chasseurs pendant le deuxième confinement"
+      }
     },
     {
       week: "2020-11-29",
@@ -527,7 +545,10 @@ export default {
       confinement: "9",
       recipe: "58",
       isLockdown: false,
-      event: {}
+      event: {
+        id: 3,
+        content: "rave party à Pont Réan le 31 décembre 2020"
+      }
     },
     {
       week: "2020-12-27",
@@ -550,7 +571,10 @@ export default {
       confinement: "7",
       recipe: "41",
       isLockdown: false,
-      event: {}
+      event: {
+        id: 3,
+        content: "rave party à Pont Réan le 31 décembre 2020"
+      }
     },
     {
       week: "2021-01-10",
@@ -650,7 +674,10 @@ export default {
       confinement: "21",
       recipe: "36",
       isLockdown: false,
-      event: {}
+      event: {
+        id: 4,
+        content: "les dauphins dans la lagune de Venise en italie le 22 mars 2021"
+      }
     },
     {
       week: "2021-03-21",
@@ -673,7 +700,10 @@ export default {
       confinement: "25",
       recipe: "35",
       isLockdown: false,
-      event: {}
+      event: {
+        id: 4,
+        content: "les dauphins dans la lagune de Venise en italie le 22 mars 2021"
+      }
     },
     {
       week: "2021-04-04",
@@ -813,7 +843,10 @@ export default {
       confinement: "2",
       recipe: "24",
       isLockdown: false,
-      event: {}
+      event: {
+        id: 5,
+        content: "Pourquoi les tronçonneuses ont été inventées fait partie des recherches les plus tapées sur google en 2021"
+      }
     },
     {
       week: "2021-07-11",
@@ -836,7 +869,10 @@ export default {
       confinement: "1",
       recipe: "24",
       isLockdown: false,
-      event: {}
+      event: {
+        id: 5,
+        content: "Pourquoi les tronçonneuses ont été inventées fait partie des recherches les plus tapées sur google en 2021"
+      }
     },
     {
       week: "2021-07-25",
