@@ -1,10 +1,13 @@
 import * as THREE from 'three'
+import Debug from '../utils/Debug'
 
 export default class Flor {
-  constructor(scene, camera, scroll){
+  constructor(scene, camera, scroll, gui){
     this.scene = scene
     this.camera = camera
     this.scroll = scroll
+    this.gui = gui;
+    this.florFolder = this.gui.ui.addFolder('Flor')
 
     this.amount = 100;
     this.size = 0.9;
@@ -31,6 +34,12 @@ export default class Flor {
     this.peakTargetElevation = [0, 0, 0, 0, 0]
     this.mountSize = 4
     this.mountPeaks = []
+
+    // this.florFolder.add(this.peaks, '0', 0,5000, 1)
+    // this.florFolder.add(this.peaks, '1', 0,5000, 1)
+    // this.florFolder.add(this.peaks, '2', 0,5000, 1)
+
+
     this.peaks.forEach(peak => {
       const mountPeak = []
       for (let i = 1; i <= this.mountSize; i++) {
@@ -108,6 +117,7 @@ export default class Flor {
   }
 
   update(){
+
     this.peakTargetElevation = [
       this.scroll.getDataValue().confinement * 0.1,
       this.scroll.getDataValue().recipe * 0.1,
