@@ -10,9 +10,11 @@ export default class Scroll extends EventEmitter {
     this.lerpSpeed = 0.05;
     this.updateSpeed = 5;
 
-    window.addEventListener("mousewheel", (e) => {
-      this.scrollUpdate(e);
-    });
+    document.querySelector('.introduction__button').addEventListener("click", ()=>{
+      window.addEventListener("mousewheel", (e) => {
+        this.scrollUpdate(e);
+      });
+    })
   }
 
   scrollUpdate(e) {
