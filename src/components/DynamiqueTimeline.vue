@@ -114,7 +114,6 @@ export default {
       this.scrollValue.isLockdown = this.getData.isLockdown
 
     }, 500)
-    console.log(this.thirdLockdown)
   }
 }
 </script>

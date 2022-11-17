@@ -8,6 +8,7 @@ export default {
       confinement: "1",
       recipe: "34",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-01-12",
@@ -17,6 +18,7 @@ export default {
       confinement: "1",
       recipe: "33",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-01-19",
@@ -26,6 +28,7 @@ export default {
       confinement: "1",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-01-26",
@@ -35,6 +38,7 @@ export default {
       confinement: "1",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-02-02",
@@ -44,6 +48,7 @@ export default {
       confinement: "1",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-02-09",
@@ -53,6 +58,7 @@ export default {
       confinement: "1",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-02-16",
@@ -62,6 +68,7 @@ export default {
       confinement: "1",
       recipe: "35",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-02-23",
@@ -71,6 +78,7 @@ export default {
       confinement: "1",
       recipe: "35",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-03-01",
@@ -80,6 +88,7 @@ export default {
       confinement: "1",
       recipe: "33",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-03-08",
@@ -89,6 +98,7 @@ export default {
       confinement: "2",
       recipe: "33",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-03-15",
@@ -98,6 +108,7 @@ export default {
       confinement: "38",
       recipe: "44",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-03-22",
@@ -107,6 +118,7 @@ export default {
       confinement: "22",
       recipe: "66",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-03-29",
@@ -116,6 +128,7 @@ export default {
       confinement: "15",
       recipe: "72",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-04-05",
@@ -125,6 +138,7 @@ export default {
       confinement: "17",
       recipe: "71",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-04-12",
@@ -134,6 +148,7 @@ export default {
       confinement: "15",
       recipe: "75",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-04-19",
@@ -143,6 +158,7 @@ export default {
       confinement: "9",
       recipe: "73",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-04-26",
@@ -152,6 +168,7 @@ export default {
       confinement: "10",
       recipe: "72",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-05-03",
@@ -161,6 +178,7 @@ export default {
       confinement: "10",
       recipe: "58",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-05-10",
@@ -170,6 +188,10 @@ export default {
       confinement: "7",
       recipe: "50",
       isLockdown: false,
+      event: {
+        id: 0,
+        content: "La catégorie coiffure fait partie des termes les plus recherchés sur google en 2020"
+      }
     },
     {
       week: "2020-05-17",
@@ -179,6 +201,7 @@ export default {
       confinement: "4",
       recipe: "48",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-05-24",
@@ -188,6 +211,7 @@ export default {
       confinement: "2",
       recipe: "38",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-05-31",
@@ -197,6 +221,7 @@ export default {
       confinement: "2",
       recipe: "39",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-06-07",
@@ -206,6 +231,7 @@ export default {
       confinement: "2",
       recipe: "35",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-06-14",
@@ -215,6 +241,7 @@ export default {
       confinement: "2",
       recipe: "35",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-06-21",
@@ -224,6 +251,7 @@ export default {
       confinement: "3",
       recipe: "31",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-06-28",
@@ -233,6 +261,7 @@ export default {
       confinement: "2",
       recipe: "30",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-07-05",
@@ -242,6 +271,10 @@ export default {
       confinement: "3",
       recipe: "29",
       isLockdown: false,
+      event: {
+        id: 1,
+        content: "103 jours de confinement en 2020"
+      }
     },
     {
       week: "2020-07-12",
@@ -251,6 +284,7 @@ export default {
       confinement: "3",
       recipe: "30",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-07-19",
@@ -260,6 +294,7 @@ export default {
       confinement: "3",
       recipe: "28",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-07-26",
@@ -269,6 +304,7 @@ export default {
       confinement: "2",
       recipe: "29",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-08-02",
@@ -278,6 +314,7 @@ export default {
       confinement: "1",
       recipe: "28",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-08-09",
@@ -287,6 +324,7 @@ export default {
       confinement: "2",
       recipe: "30",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-08-16",
@@ -296,6 +334,7 @@ export default {
       confinement: "1",
       recipe: "30",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-08-23",
@@ -305,6 +344,7 @@ export default {
       confinement: "1",
       recipe: "31",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-08-30",
@@ -314,6 +354,7 @@ export default {
       confinement: "1",
       recipe: "31",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-09-06",
@@ -323,6 +364,7 @@ export default {
       confinement: "2",
       recipe: "28",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-09-13",
@@ -332,6 +374,7 @@ export default {
       confinement: "2",
       recipe: "30",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-09-20",
@@ -341,6 +384,7 @@ export default {
       confinement: "2",
       recipe: "33",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-09-27",
@@ -350,6 +394,7 @@ export default {
       confinement: "3",
       recipe: "35",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-10-04",
@@ -359,6 +404,7 @@ export default {
       confinement: "2",
       recipe: "35",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-10-11",
@@ -368,6 +414,7 @@ export default {
       confinement: "3",
       recipe: "37",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-10-18",
@@ -377,6 +424,7 @@ export default {
       confinement: "8",
       recipe: "40",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-10-25",
@@ -386,6 +434,7 @@ export default {
       confinement: "61",
       recipe: "42",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-11-01",
@@ -395,6 +444,7 @@ export default {
       confinement: "15",
       recipe: "44",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-11-08",
@@ -404,6 +454,7 @@ export default {
       confinement: "10",
       recipe: "49",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-11-15",
@@ -413,6 +464,10 @@ export default {
       confinement: "8",
       recipe: "46",
       isLockdown: true,
+      event: {
+        id: 2,
+        content: "Dérogation pour les chasseurs pendant le deuxième confinement"
+      }
     },
     {
       week: "2020-11-22",
@@ -422,6 +477,7 @@ export default {
       confinement: "7",
       recipe: "43",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-11-29",
@@ -431,6 +487,7 @@ export default {
       confinement: "4",
       recipe: "36",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-12-06",
@@ -440,6 +497,7 @@ export default {
       confinement: "5",
       recipe: "41",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-12-13",
@@ -449,6 +507,7 @@ export default {
       confinement: "3",
       recipe: "46",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2020-12-20",
@@ -458,6 +517,7 @@ export default {
       confinement: "9",
       recipe: "58",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2020-12-27",
@@ -467,6 +527,10 @@ export default {
       confinement: "8",
       recipe: "52",
       isLockdown: false,
+      event: {
+        id: 3,
+        content: "rave party à Pont Réan le 31 décembre 2020"
+      }
     },
     {
       week: "2021-01-03",
@@ -476,6 +540,7 @@ export default {
       confinement: "7",
       recipe: "41",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-01-10",
@@ -485,6 +550,7 @@ export default {
       confinement: "10",
       recipe: "41",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-01-17",
@@ -494,6 +560,7 @@ export default {
       confinement: "11",
       recipe: "42",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-01-24",
@@ -503,6 +570,7 @@ export default {
       confinement: "25",
       recipe: "42",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-01-31",
@@ -512,6 +580,7 @@ export default {
       confinement: "7",
       recipe: "46",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-02-07",
@@ -521,6 +590,7 @@ export default {
       confinement: "4",
       recipe: "44",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-02-14",
@@ -530,6 +600,7 @@ export default {
       confinement: "2",
       recipe: "42",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-02-21",
@@ -539,6 +610,7 @@ export default {
       confinement: "10",
       recipe: "40",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-02-28",
@@ -548,6 +620,7 @@ export default {
       confinement: "9",
       recipe: "39",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-03-07",
@@ -557,6 +630,7 @@ export default {
       confinement: "5",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-03-14",
@@ -566,6 +640,7 @@ export default {
       confinement: "21",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-03-21",
@@ -575,6 +650,10 @@ export default {
       confinement: "17",
       recipe: "36",
       isLockdown: false,
+      event: {
+        id: 4,
+        content: "les dauphins dans la lagune de Venise en italie le 22 mars 2021"
+      }
     },
     {
       week: "2021-03-28",
@@ -584,6 +663,7 @@ export default {
       confinement: "25",
       recipe: "35",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-04-04",
@@ -593,6 +673,7 @@ export default {
       confinement: "6",
       recipe: "37",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2021-04-11",
@@ -602,6 +683,7 @@ export default {
       confinement: "4",
       recipe: "45",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2021-04-18",
@@ -611,6 +693,7 @@ export default {
       confinement: "4",
       recipe: "39",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2021-04-25",
@@ -620,6 +703,7 @@ export default {
       confinement: "3",
       recipe: "41",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2021-05-02",
@@ -629,6 +713,7 @@ export default {
       confinement: "2",
       recipe: "33",
       isLockdown: true,
+      event: {}
     },
     {
       week: "2021-05-09",
@@ -638,6 +723,7 @@ export default {
       confinement: "1",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-05-16",
@@ -647,6 +733,7 @@ export default {
       confinement: "1",
       recipe: "30",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-05-23",
@@ -656,6 +743,7 @@ export default {
       confinement: "1",
       recipe: "29",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-05-30",
@@ -665,6 +753,7 @@ export default {
       confinement: "1",
       recipe: "25",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-06-06",
@@ -674,6 +763,7 @@ export default {
       confinement: "1",
       recipe: "23",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-06-13",
@@ -683,6 +773,7 @@ export default {
       confinement: "1",
       recipe: "23",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-06-20",
@@ -692,6 +783,7 @@ export default {
       confinement: "1",
       recipe: "24",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-06-27",
@@ -701,6 +793,7 @@ export default {
       confinement: "1",
       recipe: "23",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-07-04",
@@ -710,6 +803,7 @@ export default {
       confinement: "2",
       recipe: "24",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-07-11",
@@ -719,6 +813,10 @@ export default {
       confinement: "1",
       recipe: "25",
       isLockdown: false,
+      event: {
+        id: 5,
+        content: "Pourquoi les tronçonneuses ont été inventées fait partie des recherches les plus tapées sur google en 2021"
+      }
     },
     {
       week: "2021-07-18",
@@ -728,6 +826,7 @@ export default {
       confinement: "1",
       recipe: "24",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-07-25",
@@ -737,6 +836,7 @@ export default {
       confinement: "1",
       recipe: "25",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-08-01",
@@ -746,6 +846,7 @@ export default {
       confinement: "1",
       recipe: "28",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-08-08",
@@ -755,6 +856,7 @@ export default {
       confinement: "1",
       recipe: "28",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-08-15",
@@ -764,6 +866,7 @@ export default {
       confinement: "1",
       recipe: "29",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-08-22",
@@ -773,6 +876,7 @@ export default {
       confinement: "1",
       recipe: "29",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-08-29",
@@ -782,6 +886,7 @@ export default {
       confinement: "1",
       recipe: "28",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-09-05",
@@ -791,6 +896,7 @@ export default {
       confinement: "1",
       recipe: "26",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-09-12",
@@ -800,6 +906,7 @@ export default {
       confinement: "1",
       recipe: "28",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-09-19",
@@ -809,6 +916,7 @@ export default {
       confinement: "1",
       recipe: "28",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-09-26",
@@ -818,6 +926,7 @@ export default {
       confinement: "1",
       recipe: "31",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-10-03",
@@ -827,6 +936,7 @@ export default {
       confinement: "1",
       recipe: "31",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-10-10",
@@ -836,6 +946,7 @@ export default {
       confinement: "1",
       recipe: "32",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-10-17",
@@ -845,6 +956,7 @@ export default {
       confinement: "1",
       recipe: "33",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-10-24",
@@ -854,6 +966,7 @@ export default {
       confinement: "1",
       recipe: "35",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-10-31",
@@ -863,6 +976,7 @@ export default {
       confinement: "1",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-11-07",
@@ -872,6 +986,7 @@ export default {
       confinement: "1",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-11-14",
@@ -881,6 +996,7 @@ export default {
       confinement: "2",
       recipe: "34",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-11-21",
@@ -890,6 +1006,7 @@ export default {
       confinement: "1",
       recipe: "33",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-11-28",
@@ -899,6 +1016,7 @@ export default {
       confinement: "1",
       recipe: "32",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-12-05",
@@ -908,6 +1026,7 @@ export default {
       confinement: "1",
       recipe: "34",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-12-12",
@@ -917,6 +1036,7 @@ export default {
       confinement: "1",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-12-19",
@@ -926,6 +1046,7 @@ export default {
       confinement: "2",
       recipe: "51",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2021-12-26",
@@ -935,6 +1056,7 @@ export default {
       confinement: "1",
       recipe: "43",
       isLockdown: false,
+      event: {}
     },
     {
       week: "2022-01-02",
@@ -944,6 +1066,7 @@ export default {
       confinement: "1",
       recipe: "36",
       isLockdown: false,
+      event: {}
     },
   ]
 }
