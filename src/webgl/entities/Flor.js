@@ -109,20 +109,23 @@ export default class Flor {
 
   update(){
     const data = this.scroll.getDataValue()
-    this.peakTargetElevation = [
-      data.confinement ? data.confinement * 0.1 : 0,
-      data.recipe ? data.recipe * 0.1 : 0,
-      data.sport ? data.sport * 0.1 : 0,
-      data.streaming ? data.streaming * 0.1 : 0,
-      data.vaccine ? data.vaccine * 0.1 : 0,
-    ]
-    this.peakElevation = [
-      THREE.MathUtils.lerp(this.peakElevation[0], this.peakTargetElevation[0], 0.1),
-      THREE.MathUtils.lerp(this.peakElevation[1], this.peakTargetElevation[1], 0.1),
-      THREE.MathUtils.lerp(this.peakElevation[2], this.peakTargetElevation[2], 0.1),
-      THREE.MathUtils.lerp(this.peakElevation[3], this.peakTargetElevation[3], 0.1),
-      THREE.MathUtils.lerp(this.peakElevation[4], this.peakTargetElevation[4], 0.1),
-    ]
+    if(data){
+      this.peakTargetElevation = [
+        data.confinement ? data.confinement * 0.1 : 0,
+        data.recipe ? data.recipe * 0.1 : 0,
+        data.sport ? data.sport * 0.1 : 0,
+        data.streaming ? data.streaming * 0.1 : 0,
+        data.vaccine ? data.vaccine * 0.1 : 0,
+      ]
+      this.peakElevation = [
+        THREE.MathUtils.lerp(this.peakElevation[0], this.peakTargetElevation[0], 0.1),
+        THREE.MathUtils.lerp(this.peakElevation[1], this.peakTargetElevation[1], 0.1),
+        THREE.MathUtils.lerp(this.peakElevation[2], this.peakTargetElevation[2], 0.1),
+        THREE.MathUtils.lerp(this.peakElevation[3], this.peakTargetElevation[3], 0.1),
+        THREE.MathUtils.lerp(this.peakElevation[4], this.peakTargetElevation[4], 0.1),
+      ]
+    }
+    
     let peaksStep = 0
     if(this.instMesh){
       let i = 0;
