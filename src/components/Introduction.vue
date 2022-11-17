@@ -1,17 +1,28 @@
 <template>
   <section class="introduction" ref="introductionRef">
     <div class="introduction__content">
-      <img src="/public/assets/images/example.png" alt="example of tower">
-      <div>
-        <p>Dans cet océan de données internet, chaque “montagne colorée” représente une catégorie de recherche.</p>
-        <p>La navigation au scroll permet de visualiser l’évolution des ces recherches sur une période de 2 ans. </p>
-        <p>Sur certaines dates ou évènements particuliers, les données impactées afficheront au hover des
-          informations.</p>
-      </div>
+      Covid trends
+      <svg width="86" height="119" viewBox="0 0 86 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect y="48.375" width="21.5" height="69.875" fill="white"/>
+        <rect x="32.25" width="21.5" height="118.25" fill="white"/>
+        <rect x="64.5" y="26.875" width="21.5" height="91.375" fill="white"/>
+      </svg>
+
+
     </div>
+
+    <p class="introduction__label">Plongez dans l'océan d'internet.</p>
+
     <button class="introduction__button" @click="hideModal">
       Commencer l'expérience
     </button>
+
+    <div class="introduction__names">
+      <p>Marie Majou</p>
+      <p>Maëlle Rabouan</p>
+      <p>Justin Quillévéré</p>
+      <p>Léonie Grimoin</p>
+    </div>
   </section>
 </template>
 
@@ -25,6 +36,7 @@ const hideModal = () => {
 
   setTimeout(() => {
     document.getElementsByClassName('timeline')[0].classList.remove('u-hidden')
+    document.getElementsByClassName('title')[0].classList.remove('u-hidden')
   }, 500)
 }
 </script>
@@ -45,16 +57,15 @@ const hideModal = () => {
   justify-content: center;
   align-items: center;
 
+  &__label {
+    margin-bottom: 3%;
+    font-size: 18px;
+  }
+
   &__content {
     margin-bottom: 24px;
-    background: rgba(170, 170, 170, 0.49);
-    border-radius: 47px;
-    max-width: 630px;
-    padding: 37px 35px;
-    font-size: 16px;
-    font-weight: 300;
-
-    display: flex;
+    font-size: 130px;
+    font-weight: 600;
 
     img {
       height: 214px;
@@ -70,13 +81,22 @@ const hideModal = () => {
     }
   }
 
+  &__names {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-weight: 300;
+    position: absolute;
+    bottom: 37px;
+  }
+
   &__button {
     background: white;
     color: black;
     border-radius: 37.5px;
     padding: 15px 21px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 300;
     cursor: pointer;
   }
 }
