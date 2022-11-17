@@ -190,6 +190,7 @@ export default {
       isLockdown: false,
       event: {
         id: 0,
+        name: "Coiffure",
         content: "La catégorie coiffure fait partie des termes les plus recherchés sur google en 2020"
       }
     },
@@ -203,6 +204,7 @@ export default {
       isLockdown: false,
       event: {
         id: 0,
+        name: "Coiffure",
         content: "La catégorie coiffure fait partie des termes les plus recherchés sur google en 2020"
       }
     },
@@ -216,6 +218,7 @@ export default {
       isLockdown: false,
       event: {
         id: 0,
+        name: "Coiffure",
         content: "La catégorie coiffure fait partie des termes les plus recherchés sur google en 2020"
       }
     },
@@ -279,6 +282,7 @@ export default {
       isLockdown: false,
       event: {
         id: 1,
+        name: "103",
         content: "103 jours de confinement en 2020"
       }
     },
@@ -292,6 +296,7 @@ export default {
       isLockdown: false,
       event: {
         id: 1,
+        name: "103",
         content: "103 jours de confinement en 2020"
       }
     },
@@ -305,6 +310,7 @@ export default {
       isLockdown: false,
       event: {
         id: 1,
+        name: "103",
         content: "103 jours de confinement en 2020"
       }
     },
@@ -478,6 +484,7 @@ export default {
       isLockdown: true,
       event: {
         id: 2,
+        name: "Chasse", 
         content: "Dérogation pour les chasseurs pendant le deuxième confinement"
       }
     },
@@ -491,6 +498,7 @@ export default {
       isLockdown: true,
       event: {
         id: 2,
+        name: "Chasse", 
         content: "Dérogation pour les chasseurs pendant le deuxième confinement"
       }
     },
@@ -504,6 +512,7 @@ export default {
       isLockdown: true,
       event: {
         id: 2,
+        name: "Chasse", 
         content: "Dérogation pour les chasseurs pendant le deuxième confinement"
       }
     },
@@ -547,6 +556,7 @@ export default {
       isLockdown: false,
       event: {
         id: 3,
+        name: "Rave party",
         content: "rave party à Pont Réan le 31 décembre 2020"
       }
     },
@@ -560,6 +570,7 @@ export default {
       isLockdown: false,
       event: {
         id: 3,
+        name: "Rave party",
         content: "rave party à Pont Réan le 31 décembre 2020"
       }
     },
@@ -573,6 +584,7 @@ export default {
       isLockdown: false,
       event: {
         id: 3,
+        name: "Rave party",
         content: "rave party à Pont Réan le 31 décembre 2020"
       }
     },
@@ -676,7 +688,8 @@ export default {
       isLockdown: false,
       event: {
         id: 4,
-        content: "les dauphins dans la lagune de Venise en italie le 22 mars 2021"
+        name: "Dauphins",
+        content: "des dauphins dans la lagune \n de Venise en italie le 22 mars 2021"
       }
     },
     {
@@ -689,7 +702,8 @@ export default {
       isLockdown: false,
       event: {
         id: 4,
-        content: "les dauphins dans la lagune de Venise en italie le 22 mars 2021"
+        name: "Dauphins",
+        content: "des dauphins dans la lagune \n de Venise en italie le 22 mars 2021"
       }
     },
     {
@@ -702,7 +716,8 @@ export default {
       isLockdown: false,
       event: {
         id: 4,
-        content: "les dauphins dans la lagune de Venise en italie le 22 mars 2021"
+        name: "Dauphins",
+        content: "des dauphins dans la lagune \n de Venise en italie le 22 mars 2021"
       }
     },
     {
@@ -845,7 +860,8 @@ export default {
       isLockdown: false,
       event: {
         id: 5,
-        content: "Pourquoi les tronçonneuses ont été inventées fait partie des recherches les plus tapées sur google en 2021"
+        name: "Pourquoi ?",
+        content: "\"Pourquoi les tronçonneuses ont été inventées\" fait partie des recherches les plus tapées sur google en 2021"
       }
     },
     {
@@ -858,7 +874,8 @@ export default {
       isLockdown: false,
       event: {
         id: 5,
-        content: "Pourquoi les tronçonneuses ont été inventées fait partie des recherches les plus tapées sur google en 2021"
+        name: "Pourquoi ?",
+        content: "\"Pourquoi les tronçonneuses ont été inventées\" fait partie des recherches les plus tapées sur google en 2021"
       }
     },
     {
@@ -871,7 +888,8 @@ export default {
       isLockdown: false,
       event: {
         id: 5,
-        content: "Pourquoi les tronçonneuses ont été inventées fait partie des recherches les plus tapées sur google en 2021"
+        name: "Pourquoi ?",
+        content: "\"Pourquoi les tronçonneuses ont été inventées\" fait partie des recherches les plus tapées sur google en 2021"
       }
     },
     {

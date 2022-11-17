@@ -27,9 +27,11 @@ export default class Flor {
     //confinement - recette - sport - streaming - vaccin
     this.peaks = [3443, 3960, 5136, 5662, 6349]
     this.colorsPeaks = [ 'F72585', '7209B7', '3A0CA3', '4361EE', '4CC9F0' ]
-    this.lighthouses = [5445, 5153, 4352, 4647, 4234, 3432]
+    this.lighthouses = [ 3432, 4234, 4352, 4647, 5153, 5445 ]
     this.lighthousesEl = 0
     this.lastLighthousesElId = null
+    this.LighthousesPos = []
+    this.lastLighthousesID = 0
     this.peakElevation = [0, 0, 0, 0, 0]
     this.peakTargetElevation = [0, 0, 0, 0, 0]
     this.peaksPosForExport = [{x:0, y:0, z:0}, {x:0, y:0, z:0}, {x:0, y:0, z:0}, {x:0, y:0, z:0}, {x:0, y:0, z:0},]
@@ -103,6 +105,12 @@ export default class Flor {
           } else if(this.lighthouses.includes(i)){
             this.topInstMesh.setColorAt( i, this.color.setHex( 0xFFBE0B ) );
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
+
+            this.LighthousesPos.push({
+              x: this.offset - x,
+              y: 0,
+              z: this.offset - z
+            })
           } else {
             this.topInstMesh.setColorAt( i, this.color.setHex( 0xffffff ) );
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
@@ -132,7 +140,7 @@ export default class Flor {
         THREE.MathUtils.lerp(this.peakElevation[3], this.peakTargetElevation[3], 0.1),
         THREE.MathUtils.lerp(this.peakElevation[4], this.peakTargetElevation[4], 0.1),
       ]
-      this.lighthousesEl = data.event.id ? THREE.MathUtils.lerp(this.lighthousesEl, 4, 0.1) : THREE.MathUtils.lerp(this.lighthousesEl, 0, 0.1)
+      this.lighthousesEl = data.event.id ? THREE.MathUtils.lerp(this.lighthousesEl, 4, 0.6) : THREE.MathUtils.lerp(this.lighthousesEl, 0, 0.6)
     }
 
     let peaksStep = 0
@@ -183,10 +191,14 @@ export default class Flor {
                 y += this.lighthousesEl
                 this.lastLighthousesElId = i
                 this.lastlighthousesEl = 4
+                this.lastLighthousesID = data.event.id
+
+                this.LighthousesPos[data.event.id].y = y
               }
             } else if(i === this.lastLighthousesElId){
-              this.lastlighthousesEl = THREE.MathUtils.lerp(this.lastlighthousesEl, 0, 0.1)
+              this.lastlighthousesEl = THREE.MathUtils.lerp(this.lastlighthousesEl, 0, 0.6)
               y += this.lastlighthousesEl
+              this.LighthousesPos[this.lastLighthousesID].y = y
             }
           }
 
@@ -256,5 +268,18 @@ export default class Flor {
 
   getPeaksColors(){
     return this.colorsPeaks
+  }
+
+  getLighthousesPos(){
+    return this.LighthousesPos
+  }
+
+  getLighthousesID(){
+    const data = this.scroll.getDataValue()
+    if( data && data.event){
+      return data.event.id
+    }
+
+    return this.lastLighthousesID
   }
 }
