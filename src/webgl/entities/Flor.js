@@ -263,51 +263,9 @@ export default class Flor {
             peaksStep++;
 
             //Camera Animation with raycasting on peaks
-            if (this.currentIntersectId === i && this.clicked === true) {
-              this.currentPeakPosition = this.getPeaksPos()[peaksStep - 1]
-              if (
-                this.isAnimated === false &&
-                this.hasBeenClicked === false
-              ) {
-                if (this.cameraToInitialPosition) this.cameraToInitialPosition.kill();
-                this.cameraToPeakAnimation = gsap.to(this.camera.position, {
-                  x: this.currentPeakPosition.x,
-                  y: this.currentPeakPosition.y + 5,
-                  z: this.currentPeakPosition.z + 15,
-                  duration: 3,
-                  ease: "power1.inOut",
-                  onUpdate: () => {
-                    this.cameraTarget = {
-                      x: this.currentPeakPosition.x,
-                      y: this.currentPeakPosition.y + 5,
-                      z: this.currentPeakPosition.z,
-                    };
-                    const x = THREE.MathUtils.lerp(
-                      this.cameraCurrent.x,
-                      this.cameraTarget.x,
-                      0.1
-                    );
-                    const y = THREE.MathUtils.lerp(
-                      this.cameraCurrent.y,
-                      this.cameraTarget.y,
-                      0.1
-                    );
-                    const z = THREE.MathUtils.lerp(
-                      this.cameraCurrent.z,
-                      this.cameraTarget.z,
-                      0.1
-                    );
+            this.animCamera(this.getPeaksPos()[peaksStep - 1], i)
 
-                    this.cameraCurrent = { x: x, y: y, z: z };
-                    this.camera.lookAt(x, y, z);
-                    this.camera.updateProjectionMatrix();
-                  }
-                });
-              }
-              this.initialPosition = false;
-              this.hasBeenClicked = true;
-              this.isAnimated = true;
-            }
+           
           }
 
           if(data && data.event){
@@ -319,6 +277,9 @@ export default class Flor {
                 this.lastLighthousesID = data.event.id
 
                 this.LighthousesPos[data.event.id].y = y
+
+                this.animCamera(this.getLighthousesPos()[data.event.id], i)
+                
               }
             } else if(i === this.lastLighthousesElId){
               this.lastlighthousesEl = THREE.MathUtils.lerp(this.lastlighthousesEl, 0, 0.6)
@@ -340,50 +301,7 @@ export default class Flor {
                 );
 
                 //Anim camera onclick
-                if (this.currentIntersectId === i && this.clicked === true) {
-                  if (
-                    this.isAnimated === false &&
-                    this.hasBeenClicked === false
-                  ) {
-                    if (this.cameraToInitialPosition) this.cameraToInitialPosition.kill();
-                    this.cameraToPeakAnimation = gsap.to(this.camera.position, {
-                      x: this.getPeaksPos()[m].x,
-                      y: this.getPeaksPos()[m].y + 5,
-                      z: this.getPeaksPos()[m].z + 15,
-                      duration: 3,
-                      ease: "power1.inOut",
-                      onUpdate: () => {
-                        this.cameraTarget = {
-                          x: this.getPeaksPos()[m].x,
-                          y: this.getPeaksPos()[m].y + 5,
-                          z: this.getPeaksPos()[m].z,
-                        };
-                        const x = THREE.MathUtils.lerp(
-                          this.cameraCurrent.x,
-                          this.cameraTarget.x,
-                          0.05
-                        );
-                        const y = THREE.MathUtils.lerp(
-                          this.cameraCurrent.y,
-                          this.cameraTarget.y,
-                          0.05
-                        );
-                        const z = THREE.MathUtils.lerp(
-                          this.cameraCurrent.z,
-                          this.cameraTarget.z,
-                          0.05
-                        );
-
-                        this.cameraCurrent = { x: x, y: y, z: z };
-                        this.camera.lookAt(x, y, z);
-                        this.camera.updateProjectionMatrix();
-                      }
-                    });
-                  }
-                  this.initialPosition = false;
-                  this.hasBeenClicked = true;
-                  this.isAnimated = true;
-                }
+                this.animCamera(this.getPeaksPos()[m], i)
               }
             }
           }
@@ -461,5 +379,52 @@ export default class Flor {
     }
 
     return this.lastLighthousesID
+  }
+
+  animCamera(target, intersect){
+    if (this.currentIntersectId === intersect && this.clicked === true) {
+      if (
+        this.isAnimated === false &&
+        this.hasBeenClicked === false
+      ) {
+        if (this.cameraToInitialPosition) this.cameraToInitialPosition.kill();
+        this.cameraToPeakAnimation = gsap.to(this.camera.position, {
+          x: target.x,
+          y: target.y + 5,
+          z: target.z + 15,
+          duration: 3,
+          ease: "power1.inOut",
+          onUpdate: () => {
+            this.cameraTarget = {
+              x: target.x,
+              y: target.y + 5,
+              z: target.z,
+            };
+            const x = THREE.MathUtils.lerp(
+              this.cameraCurrent.x,
+              this.cameraTarget.x,
+              0.05
+            );
+            const y = THREE.MathUtils.lerp(
+              this.cameraCurrent.y,
+              this.cameraTarget.y,
+              0.05
+            );
+            const z = THREE.MathUtils.lerp(
+              this.cameraCurrent.z,
+              this.cameraTarget.z,
+              0.05
+            );
+
+            this.cameraCurrent = { x: x, y: y, z: z };
+            this.camera.lookAt(x, y, z);
+            this.camera.updateProjectionMatrix();
+          }
+        });
+      }
+      this.initialPosition = false;
+      this.hasBeenClicked = true;
+      this.isAnimated = true;
+    }
   }
 }
