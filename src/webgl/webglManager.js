@@ -44,11 +44,15 @@ export default class WebGlManager {
       this.camera.lookAt(5, 2, 0)
       this.scene.add(this.camera)
 
-      this.cameraFolder = this.debug.ui.addFolder('camera')
-      this.cameraFolder.add(this.camera.position, 'x', -50, 50, 1)
-      this.cameraFolder.add(this.camera.position, 'z', -50, 50, 1)
-      this.cameraFolder.add(this.camera.position, 'y', -50, 50, 1)
-      this.cameraFolder.add(this, 'zoom', -10, 10, 0.1)
+      if(this.debug.active) {
+        this.cameraFolder = this.debug.ui.addFolder('camera')
+        this.cameraFolder.add(this.camera.position, 'x', -50, 50, 1)
+        this.cameraFolder.add(this.camera.position, 'z', -50, 50, 1)
+        this.cameraFolder.add(this.camera.position, 'y', -50, 50, 1)
+        this.cameraFolder.add(this, 'zoom', -10, 10, 0.1)
+      }
+
+      
 
       // OrbitControls
       // this.controls = new OrbitControls(this.camera, this.canvas)
