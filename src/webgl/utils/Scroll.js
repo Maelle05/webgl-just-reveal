@@ -61,4 +61,5 @@ export default class Scroll extends EventEmitter {
   lerp(start, end, amt) {
     return (1 - amt) * start + amt * end;
   }
+  
 }

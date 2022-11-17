@@ -112,14 +112,14 @@ export default class Texts {
         myText.position.y = lighthousePos[index].y + 4.6
         myText.position.z = lighthousePos[index].z
 
-        if(lighthousePos[index].y < 0.5){
-          myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 0, 0.3)
-          myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 0, 0.3)
-          myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 0, 0.3)
+        if((!this.floor.isLighthouseRayc() && !this.floor.hasBeenClicked) || lighthousePos[index].y < 0.5 ){
+          myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 0, 0.1)
+          myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 0, 0.1)
+          myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 0, 0.1)
         } else {
-          myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 1, 0.3)
-          myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 1, 0.3)
-          myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 1, 0.3)
+          myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 1, 0.1)
+          myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 1, 0.1)
+          myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 1, 0.1)
         }
       })
     }
