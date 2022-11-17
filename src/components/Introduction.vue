@@ -22,6 +22,10 @@ const introductionRef = ref()
 
 const hideModal = () => {
   introductionRef.value.classList.add('u-hidden')
+
+  setTimeout(() => {
+    document.getElementsByClassName('timeline')[0].classList.remove('u-hidden')
+  }, 500)
 }
 </script>
 

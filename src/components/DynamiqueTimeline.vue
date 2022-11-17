@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline">
+  <div class="timeline u-hidden">
     <div class="timeline__header">
       <h2 class="timeline__date">{{ scrollValue.week }}</h2>
       <p v-if="scrollValue.isLockdown === true" class="timeline__label">Confinement</p>
@@ -40,6 +40,7 @@ export default {
     }
   },
   mounted() {
+
     const myScene = new Scene()
     this.getStaticData = data.content
 
@@ -125,6 +126,8 @@ export default {
   right: 0;
   top: 0;
   text-align: right;
+  opacity: 1;
+  visibility: visible;
 
   min-width: 236px;
   height: 100vh;

@@ -1,6 +1,16 @@
 export default {
   content: [
     {
+      week: "2020-01-01",
+      sport: "0",
+      vaccine: "0",
+      streaming: "0",
+      confinement: "0",
+      recipe: "0",
+      isLockdown: false,
+      event: {}
+    },
+    {
       week: "2020-01-05",
       sport: "14",
       vaccine: "1",

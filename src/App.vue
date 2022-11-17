@@ -10,8 +10,8 @@ import DynamiqueTimeline from '@/components/DynamiqueTimeline.vue'
   <header>
     <Logo />
   </header>
-<!--  <Introduction/>-->
-  <DynamiqueTimeline/>
+  <Introduction ref="introductionRef"/>
+  <DynamiqueTimeline />
 </template>
 
 <script>
