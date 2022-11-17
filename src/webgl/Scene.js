@@ -29,33 +29,33 @@ export default class Scene {
     this.sizes = this.webgl.sizes;
 
     // Lights
-    // this.ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+    this.ambientLight = new THREE.AmbientLight(0x404040); // soft white light
     this.pointLight = new THREE.PointLight(0xffffff, 1, 50);
-    this.pointLight.position.set(5, 5, 5);
+    this.pointLight.position.set(5, 50, 5);
     this.scene.add(this.ambientLight, this.pointLight);
 
     // Create flor - Instance Meshs
     this.flor = new Flor(this.scene, this.camera);
 
     //Create bloom
-    // this.effectComposer = new EffectComposer(this.renderer);
-    // this.effectComposer.setSize(this.sizes.width, this.sizes.height);
-    // this.effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.effectComposer = new EffectComposer(this.renderer);
+    this.effectComposer.setSize(this.sizes.width, this.sizes.height);
+    this.effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // const renderPass = new RenderPass(this.scene, this.camera);
-    // this.effectComposer.addPass(renderPass);
+    const renderPass = new RenderPass(this.scene, this.camera);
+    this.effectComposer.addPass(renderPass);
 
-    // const unrealBloomPass = new UnrealBloomPass();
-    // unrealBloomPass.strength = .5;
-    // unrealBloomPass.radius = .8;
-    // unrealBloomPass.threshold = .2;
+    const unrealBloomPass = new UnrealBloomPass();
+    unrealBloomPass.strength = .8;
+    unrealBloomPass.radius = .8;
+    unrealBloomPass.threshold = .5;
 
-    // this.effectComposer.addPass(unrealBloomPass);
+    this.effectComposer.addPass(unrealBloomPass);
   }
 
   update() {
     // console.log('tick')
     this.flor.update();
-    // this.effectComposer.render();
+    this.effectComposer.render();
   }
 }

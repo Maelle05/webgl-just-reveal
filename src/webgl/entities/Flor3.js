@@ -124,14 +124,14 @@ export default class Flor {
       this.size + 0.01
     );
     const topMaterial = new THREE.MeshStandardMaterial({
-      color: 0xffffff,
+      color: 0x000000,
       metalness: 0.5,
       roughness: 0.5,
       envMap: environmentMapTexture,
     });
     this.gui.ui.add(topMaterial, "metalness", 0, 1, 0.01);
     this.gui.ui.add(topMaterial, "roughness", 0, 1, 0.01);
-    this.topInstMesh = new THREE.InstancedMesh(topGeometry, matcapMaterial, count);
+    this.topInstMesh = new THREE.InstancedMesh(topGeometry, topMaterial, count);
 
     this.peaks = [3550, 4465, 4840, 5250, 6350];
     this.colorsPeaks = [0xf72585, 0x7209b7, 0x3a0ca3, 0x4361ee, 0x4cc9f0];

@@ -78,6 +78,6 @@ export default class WebGlManager {
     update(){
       this.controls.update()
       this.world.update()
-      this.renderer.render(this.scene, this.camera)
+      // this.renderer.render(this.scene, this.camera)
     }
 }
