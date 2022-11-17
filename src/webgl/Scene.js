@@ -2,6 +2,7 @@ import WebGlManager from './webglManager'
 import * as THREE from 'three'
 import Flor from '../webgl/entities/Flor'
 import Texts from './entities/Texts'
+import Lights from './entities/Lights'
 
 let sceneInstance
 
@@ -34,6 +35,9 @@ export default class Scene {
     // Create 3D Texts
     this.texts = new Texts(this.scene, this.flor)
 
+    // Create lights for peaks
+    this.lights = new Lights(this.scene, this.flor)
+
   }
 
   update(){
@@ -41,5 +45,7 @@ export default class Scene {
     this.flor.update()
 
     this.texts.update()
+
+    this.lights.update()
   }
 }

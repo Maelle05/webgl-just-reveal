@@ -30,7 +30,7 @@ export default class WebGlManager {
 
       this.scene = new THREE.Scene()
       this.scene.background = 'black'
-      // this.scene.fog = new THREE.FogExp2( 0xff0000, 0.003 )
+      this.scene.fog = new THREE.FogExp2( 0x000000, 0.01 )
 
       // My Scene object
       this.world = new Scene()

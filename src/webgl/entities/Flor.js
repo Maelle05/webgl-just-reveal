@@ -25,11 +25,11 @@ export default class Flor {
 
 
     //confinement - recette - sport - streaming - vaccin
-    // [5136, 5547, 5163, 3960, 3443]
-    // [3443, 3960, 5136, 5163, 5547]
     this.peaks = [3443, 3960, 5136, 5662, 6349]
     this.colorsPeaks = [ 'F72585', '7209B7', '3A0CA3', '4361EE', '4CC9F0' ]
-    this.lighthouses = 5470
+    this.lighthouses = [5445, 5153, 4352, 4647, 4234, 3432]
+    this.lighthousesElCurrent = 0
+    this.lighthousesElTarget = 4
     this.peakElevation = [0, 0, 0, 0, 0]
     this.peakTargetElevation = [0, 0, 0, 0, 0]
     this.peaksPosForExport = [{x:0, y:0, z:0}, {x:0, y:0, z:0}, {x:0, y:0, z:0}, {x:0, y:0, z:0}, {x:0, y:0, z:0},]
@@ -100,6 +100,9 @@ export default class Flor {
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
             this.topInstMesh.setColorAt( i, this.color.setHex( '0x' + this.colorsPeaks[peaksStep] ) );
             peaksStep++
+          } else if(this.lighthouses.includes(i)){
+            this.topInstMesh.setColorAt( i, this.color.setHex( 0xFFBE0B ) );
+            this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
           } else {
             this.topInstMesh.setColorAt( i, this.color.setHex( 0xffffff ) );
             this.instMesh.setColorAt( i, this.color.setHex( 0x363636 ) );
@@ -173,8 +176,12 @@ export default class Flor {
             peaksStep++
           }
 
-          if(i ===  this.lighthouses){
-            y += this.peakElevation[0]
+          // console.log(data.event.id, data.event.content) 
+          if(this.lighthouses.includes(i) && data && data.event && data.event.id && data.event.content){
+            if(this.lighthouses[data.event.id] === i){
+              this.lighthousesElCurrent = THREE.MathUtils.lerp( this.lighthousesElCurrent, this.lighthousesElTarget , 0.3)
+              y += this.lighthousesElCurrent
+            }
           }
 
           for (let m = 0; m < this.mountPeaks.length; m++) {
@@ -239,5 +246,9 @@ export default class Flor {
 
   getPeaksPos(){
     return this.peaksPosForExport
+  }
+
+  getPeaksColors(){
+    return this.colorsPeaks
   }
 }

@@ -9,6 +9,6 @@ export default class Lights{
   }
 
   update(){
-    console.log(this.floor.getPeaksPos())
+    // console.log(this.floor.getPeaksPos(), this.floor.getPeaksColors())
   }
 }
