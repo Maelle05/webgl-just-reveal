@@ -27,10 +27,9 @@ export default class WebGlManager {
       this.time = new Time()
       this.scroll = new Scroll(data.content)
 
-
       this.scene = new THREE.Scene()
       this.scene.background = 'black'
-      // this.scene.fog = new THREE.FogExp2( 0xff0000, 0.003 )
+      // this.scene.fog = new THREE.FogExp2( 0x000000, 0.003 )
 
       // My Scene object
       this.world = new Scene()
@@ -40,8 +39,9 @@ export default class WebGlManager {
       // Camera
       // this.camera = new THREE.OrthographicCamera( this.sizes.width / - 2, this.sizes.width / 2, this.sizes.height / 2, this.sizes.height / - 2, 1, 1000 )
       this.camera = new THREE.PerspectiveCamera(35, this.sizes.width / this.sizes.height, 0.5, 700)
-      this.camera.position.set(23, 13, 34)
-      this.camera.lookAt(5, 2, 0)
+      this.initialCamera = {lookAt : {x: 5, y: 2, z: 0}, position : {x: 23, y: 13, z: 34}}
+      this.camera.position.set(this.initialCamera.position.x, this.initialCamera.position.y, this.initialCamera.position.z)
+      this.camera.lookAt(this.initialCamera.lookAt.x, this.initialCamera.lookAt.y, this.initialCamera.lookAt.z)
       this.scene.add(this.camera)
 
       if(this.debug.active) {
@@ -90,7 +90,7 @@ export default class WebGlManager {
     }
 
     update(){
-      this.camera.lookAt(5, 2, 0)
+      // this.camera.lookAt(5, 2, 0)
 
       
       // this.controls.update()

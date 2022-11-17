@@ -29,7 +29,7 @@ export default class Scene {
     this.scene.add( this.ambientLight , this.pointLight );
 
     // Create flor - Instance Meshs
-    this.flor =  new Flor(this.scene , this.camera, this.webgl.scroll)
+    this.flor =  new Flor(this.scene , this.camera, this.webgl.scroll, this.webgl.initialCamera)
 
     // Create 3D Texts
     this.texts = new Texts(this.scene, this.flor)
