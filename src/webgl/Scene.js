@@ -1,6 +1,7 @@
 import WebGlManager from './webglManager'
 import * as THREE from 'three'
 import Flor from '../webgl/entities/Flor'
+import Texts from './entities/Texts'
 
 let sceneInstance
 
@@ -30,10 +31,15 @@ export default class Scene {
     // Create flor - Instance Meshs
     this.flor =  new Flor(this.scene , this.camera, this.webgl.scroll)
 
+    // Create 3D Texts
+    this.texts = new Texts(this.scene, this.flor)
+
   }
 
   update(){
     // console.log('tick')
     this.flor.update()
+
+    this.texts.update()
   }
 }
