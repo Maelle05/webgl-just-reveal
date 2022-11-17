@@ -13,7 +13,7 @@ export default class Texts {
       },
       {
         name: 'Recettes',
-        desc: 'balabalhab'
+        desc: 'balabalhab \n sodifjsldufhsld fsjfd \n sdjufisodfbhsu'
       },
       {
         name: 'Sport',
@@ -69,7 +69,7 @@ export default class Texts {
         geometry.translate( xMid, 0, 0 );
 
         const mytextdesc = new THREE.Mesh( geometry, matDarkDesc );
-        mytextdesc.position.x = 3.5
+        mytextdesc.position.x = geometry.boundingBox.max.x + 2
         mytextdesc.position.y = -0.3
         mytextdesc.material.opacity = 0
 
@@ -109,10 +109,7 @@ export default class Texts {
         myText.position.y = peaksPos[index].y + 4.6
         myText.position.z = peaksPos[index].z
 
-        // if(index === 2){
-        //   myText.children[1].material.opacity = 1
-        // }
-        if(peaksPos[index].y < 0.25){
+        if(peaksPos[index].y < 0.35){
           myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 0, 0.2)
           myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 0, 0.2)
         } else {
