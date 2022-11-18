@@ -8,7 +8,7 @@
 
 <style lang="scss">
 .scroll {
-  font-size: 25px;
+  font-size: 20px;
   text-transform: uppercase;
   position: fixed;
   bottom: 37px;
