@@ -99,17 +99,19 @@ export default class Texts {
           myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 1, 0.2)
 
           if(this.floor.hasBeenClicked && this.floor.currentIdClicked === index && !this.floor.clickedIsLighthouse){
+            this.myTextsDecal = THREE.MathUtils.lerp( this.myTextsDecal ,myText.children[1].geometry.boundingBox.max.y*2.3 + .3, 0.5)
             myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 1, 0.2)
           } else {
+            this.myTextsDecal = THREE.MathUtils.lerp( this.myTextsDecal , 0, 0.5)
             myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 0, 0.2)
           }
         }
+        
+        
 
         myText.position.x = peaksPos[index].x
-        myText.position.y = peaksPos[index].y + 4.6
+        myText.position.y = peaksPos[index].y + 4.6 + this.myTextsDecal
         myText.position.z = peaksPos[index].z
-
-        this.myTextsDecal = THREE.MathUtils.lerp( this.myTextsDecal ,myText.children[1].geometry.boundingBox.max.y, 0.5)
       })
     }
 
