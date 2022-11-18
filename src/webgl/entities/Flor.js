@@ -28,7 +28,6 @@ export default class Flor {
     this.topDummy = new THREE.Object3D();
     this.color = new THREE.Color();
 
-    this.keyboardAudio = new Audio("../../public/assets/music/keyboard-cut-shorter.mp3");
 
     const count = Math.pow(this.amount, 2);
 
@@ -283,11 +282,13 @@ export default class Flor {
         if (this.intersects && this.intersects.length >= 1) {
           this.currentIntersectId = this.intersects[0].instanceId;
 
-          if (this.experienceStarted === true) {
-            this.keyboardAudio.play();
-          }
+          
           
           if(this.lastsIntersect[this.lastsIntersect.length-1] != this.currentIntersectId){
+            if (this.experienceStarted === true) {
+              this.keyboardAudio = new Audio("../../public/assets/music/keyboard-cut-shorter.mp3");
+              this.keyboardAudio.play();
+            }
             this.lastsIntersect.push(this.currentIntersectId)
             if (this.lastsIntersect.length > 15) {
               this.lastsIntersect.shift()
