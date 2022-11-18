@@ -110,7 +110,6 @@ export default class Texts {
         myText.position.z = peaksPos[index].z
 
         this.myTextsDecal = THREE.MathUtils.lerp( this.myTextsDecal ,myText.children[1].geometry.boundingBox.max.y, 0.5)
-        console.log(myText.children[1].geometry.boundingBox.max.y);
       })
     }
 

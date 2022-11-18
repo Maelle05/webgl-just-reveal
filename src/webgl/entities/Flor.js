@@ -15,6 +15,9 @@ export default class Flor {
     this.topDummy = new THREE.Object3D();
     this.color = new THREE.Color();
 
+    this.keyboardAudio = new Audio('../../public/assets/music/k-cut.mov')
+    
+
     const count = Math.pow(this.amount, 2);
 
     const geometry = new THREE.BoxGeometry(
@@ -231,6 +234,7 @@ export default class Flor {
 
         if (this.intersects && this.intersects.length >= 1) {
           this.currentIntersectId = this.intersects[0].instanceId;
+          this.keyboardAudio.play()
         } else {
           this.currentIntersectId = null;
         }
