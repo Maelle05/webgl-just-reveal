@@ -91,7 +91,7 @@ export default class Texts {
     if(this.myTexts.length > 4){
       const peaksPos = this.floor.getPeaksPos()
       this.myTexts.forEach((myText, index) => {
-        if(peaksPos[index].y < 0.35){
+        if(peaksPos[index].y < 0.4){
           myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 0, 0.2)
           myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 0, 0.2)
         } else {
