@@ -238,6 +238,15 @@ export default class Flor {
         } else {
           this.currentIntersectId = null;
         }
+
+        if(this.currentIdClicked){
+          this.peakTargetElevation[this.currentIdClicked] = 
+          this.peakTargetElevation.forEach((peakTarg, i) => {
+            if (i != this.currentIdClicked) {
+              peakTarg = 0
+            }
+          })
+        }
       }
 
       for (let x = 0; x < this.amount; x++) {
@@ -265,7 +274,6 @@ export default class Flor {
             //Camera Animation with raycasting on peaks
             this.animCamera(this.getPeaksPos()[peaksStep - 1], i, peaksStep-1)
 
-           
           }
 
           if(data && data.event){
