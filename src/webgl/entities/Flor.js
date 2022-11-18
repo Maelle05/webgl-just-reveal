@@ -381,6 +381,7 @@ export default class Flor {
   }
 
   animCamera(target, intersect, id){
+    this.cameraOffset = 4
     if (this.currentIntersectId === intersect && this.clicked === true) {
       this.currentIdClicked = id
       if (
@@ -389,15 +390,15 @@ export default class Flor {
       ) {
         if (this.cameraToInitialPosition) this.cameraToInitialPosition.kill();
         this.cameraToPeakAnimation = gsap.to(this.camera.position, {
-          x: target.x,
+          x: target.x + this.cameraOffset,
           y: target.y + 5,
           z: target.z + 15,
           duration: 3,
           ease: "power1.inOut",
           onUpdate: () => {
             this.cameraTarget = {
-              x: target.x,
-              y: target.y + 5,
+              x: target.x + this.cameraOffset,
+              y: target.y + 3,
               z: target.z,
             };
             const x = THREE.MathUtils.lerp(
