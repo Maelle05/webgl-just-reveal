@@ -263,7 +263,7 @@ export default class Flor {
             peaksStep++;
 
             //Camera Animation with raycasting on peaks
-            this.animCamera(this.getPeaksPos()[peaksStep - 1], i)
+            this.animCamera(this.getPeaksPos()[peaksStep - 1], i, peaksStep-1)
 
            
           }
@@ -278,7 +278,7 @@ export default class Flor {
 
                 this.LighthousesPos[data.event.id].y = y
 
-                this.animCamera(this.getLighthousesPos()[data.event.id], i)
+                this.animCamera(this.getLighthousesPos()[data.event.id], i, data.event.id)
                 
               }
             } else if(i === this.lastLighthousesElId){
@@ -301,7 +301,7 @@ export default class Flor {
                 );
 
                 //Anim camera onclick
-                this.animCamera(this.getPeaksPos()[m], i)
+                this.animCamera(this.getPeaksPos()[m], i, m)
               }
             }
           }
@@ -377,12 +377,12 @@ export default class Flor {
     if( data && data.event){
       return data.event.id
     }
-
     return this.lastLighthousesID
   }
 
-  animCamera(target, intersect){
+  animCamera(target, intersect, id){
     if (this.currentIntersectId === intersect && this.clicked === true) {
+      this.currentIdClicked = id
       if (
         this.isAnimated === false &&
         this.hasBeenClicked === false

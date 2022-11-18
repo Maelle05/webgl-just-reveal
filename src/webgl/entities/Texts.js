@@ -13,7 +13,7 @@ export default class Texts {
       },
       {
         name: 'Recettes',
-        desc: 'Au cours des années covid, la cuisine est devenu un passe-temps très apprécié chez les français'
+        desc: 'Au cours des années covid, \nla cuisine est devenu un passe-temps très \napprécié chez les français'
       },
       {
         name: 'Sport',
@@ -21,7 +21,7 @@ export default class Texts {
       },
       {
         name: 'Streaming',
-        desc: 'Malgré la fermeture des cinéma, l\'audiovisuel a vu exploser la demande sur les plateformes de streaming'
+        desc: 'Malgré la fermeture des cinéma, \nl\'audiovisuel a vu exploser \nla demande sur les plateformes \nde streaming'
       },
       {
         name: 'Vaccin',
@@ -100,6 +100,12 @@ export default class Texts {
         } else {
           myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 1, 0.2)
           myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 1, 0.2)
+
+          if(this.floor.hasBeenClicked && this.floor.currentIdClicked === index){
+            myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 1, 0.2)
+          } else {
+            myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 0, 0.2)
+          }
         }
       })
     }
