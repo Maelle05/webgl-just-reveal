@@ -9,15 +9,15 @@ export default class Texts {
     const textData = [
       {
         name: 'Confinement',
-        desc: ' Pendant ces années covid, les confinements ont rythmés les quotidiens des français'
+        desc: 'Pendant ces années covid, \nles confinements ont rythmés les \nquotidiens des français'
       },
       {
         name: 'Recettes',
-        desc: 'Au cours des années covid, \nla cuisine est devenu un passe-temps très \napprécié chez les français'
+        desc: 'Au cours des années covid, \nla cuisine est devenu un passe-temps \ntrès apprécié chez les français'
       },
       {
         name: 'Sport',
-        desc: 'Confinés chez eux, beaucoup de français se sont mis au sport pendant le confinement'
+        desc: 'Confinés chez eux, \nbeaucoup de français se sont \nmis au sport pendant le confinement'
       },
       {
         name: 'Streaming',
@@ -25,7 +25,7 @@ export default class Texts {
       },
       {
         name: 'Vaccin',
-        desc: 'Très débattu dans l\'actualité, les recherches sur le vaccin sont apparu lors du 2ème confinement'
+        desc: 'Très débattu dans l\'actualité, \nles recherches sur le vaccin sont \napparu lors du 2ème confinement'
       },
     ]
   
