@@ -1,9 +1,15 @@
 <template>
   <div class="timeline">
     <div class="timeline__header u-hidden">
-      <h2 class="timeline__date">{{ scrollValue.week }}</h2>
-      <p v-if="scrollValue.isLockdown === true" class="timeline__label">Confinement</p>
-      <div v-if="scrollValue.isLockdown === true" class="timeline__label--underline"/>
+      <transition name="fade" mode="out-in">
+        <h2 class="timeline__date" :key="scrollValue.week">{{ scrollValue.week }}</h2>
+      </transition>
+      <transition name="fade" mode="out-in">
+        <p :key="scrollValue.week" v-if="scrollValue.isLockdown === true" class="timeline__label">Confinement</p>
+      </transition>
+      <transition name="fade" mode="out-in">
+        <div :key="scrollValue.week" v-if="scrollValue.isLockdown === true" class="timeline__label--underline"/>
+      </transition>
     </div>
 
     <div class="timeline__container u-hidden">
@@ -215,5 +221,18 @@ export default {
       margin-bottom: 0;
     }
   }
+}
+
+// animate transition
+.fade-enter-active {
+  transition: all .3s ease;
+}
+
+.fade-leave-active {
+  transition: opacity .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
