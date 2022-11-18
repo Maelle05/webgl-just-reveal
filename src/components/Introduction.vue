@@ -52,6 +52,7 @@ const hideModal = () => {
   width: 100vw;
   position: fixed;
   top: 0;
+  z-index: 10;
   background: linear-gradient(270deg, #222126 -7.18%, rgba(27, 27, 27, 0) 100%);
 
   opacity: 1;
