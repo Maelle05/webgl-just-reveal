@@ -30,6 +30,7 @@ export default class Texts {
     ]
   
     this.myTexts = []
+    this.myTextsDecal = 0
 
     const lighthouseData = [
       {
@@ -90,10 +91,6 @@ export default class Texts {
     if(this.myTexts.length > 4){
       const peaksPos = this.floor.getPeaksPos()
       this.myTexts.forEach((myText, index) => {
-        myText.position.x = peaksPos[index].x
-        myText.position.y = peaksPos[index].y + 4.6
-        myText.position.z = peaksPos[index].z
-
         if(peaksPos[index].y < 0.35){
           myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 0, 0.2)
           myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 0, 0.2)
@@ -107,6 +104,13 @@ export default class Texts {
             myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 0, 0.2)
           }
         }
+
+        myText.position.x = peaksPos[index].x
+        myText.position.y = peaksPos[index].y + 4.6
+        myText.position.z = peaksPos[index].z
+
+        this.myTextsDecal = THREE.MathUtils.lerp( this.myTextsDecal ,myText.children[1].geometry.boundingBox.max.y, 0.5)
+        console.log(myText.children[1].geometry.boundingBox.max.y);
       })
     }
 
