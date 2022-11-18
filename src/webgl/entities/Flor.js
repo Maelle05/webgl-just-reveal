@@ -288,6 +288,7 @@ export default class Flor {
             if (this.experienceStarted === true) {
               this.keyboardAudio = new Audio("../../public/assets/music/keyboard-cut-shorter.mp3");
               this.keyboardAudio.play();
+              this.keyboardAudio.volume = 0.15
             }
             this.lastsIntersect.push(this.currentIntersectId)
             if (this.lastsIntersect.length > 15) {
