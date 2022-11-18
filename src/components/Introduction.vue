@@ -35,6 +35,7 @@ const audio = new Audio('../public/assets/music/spy.mp3')
 const hideModal = () => {
   introductionRef.value.classList.add('u-hidden')
   audio.play()
+  audio.volume = 0.010
 
   setTimeout(() => {
     document.getElementsByClassName('timeline__header')[0].classList.remove('u-hidden')

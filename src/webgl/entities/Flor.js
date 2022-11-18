@@ -8,6 +8,9 @@ export default class Flor {
     this.initialCamera = initialCamera;
     this.scroll = scroll;
 
+    this.keyboardAudio = new Audio("../../public/assets/music/keyboard-cut-shorter.mp3");
+
+
     this.mouse = new THREE.Vector2(-1, 1);
 
     document
@@ -204,6 +207,10 @@ export default class Flor {
     this.lastsIntersect = []
     setInterval(()=>{
       this.lastsIntersect.shift()
+      if (this.experienceStarted === true && this.lastsIntersect.length > 3) {
+        this.keyboardAudio.play();
+        this.keyboardAudio.volume = 0.1
+      }
     }, 40)
 
     window.addEventListener("mousemove", (e) => {
@@ -285,11 +292,6 @@ export default class Flor {
           
           
           if(this.lastsIntersect[this.lastsIntersect.length-1] != this.currentIntersectId){
-            if (this.experienceStarted === true) {
-              this.keyboardAudio = new Audio("../../public/assets/music/keyboard-cut-shorter.mp3");
-              this.keyboardAudio.play();
-              this.keyboardAudio.volume = 0.15
-            }
             this.lastsIntersect.push(this.currentIntersectId)
             if (this.lastsIntersect.length > 15) {
               this.lastsIntersect.shift()
