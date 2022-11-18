@@ -59,6 +59,7 @@ export default class Flor {
 
       if (this.hasBeenClicked === true && this.initialPosition === false) {
         this.currentIdClicked = null
+        this.clickedIsLighthouse = null
 
         this.cameraToPeakAnimation.kill();
         this.cameraToInitialPosition = gsap.to(this.camera.position, {
@@ -306,12 +307,12 @@ export default class Flor {
                 this.topInstMesh.setColorAt(
                   i,
                   this.color.setHex(
-                    this.getColorDegrade(this.colorsPeaks[m], r, false)
+                    this.getColorDegrade(this.colorsPeaks[m], r)
                   )
                 );
 
                 //Anim camera onclick
-                this.animCamera(this.getPeaksPos()[m], i, m)
+                this.animCamera(this.getPeaksPos()[m], i, m, false)
               }
             }
           }
