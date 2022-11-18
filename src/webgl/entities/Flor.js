@@ -58,6 +58,8 @@ export default class Flor {
       }
 
       if (this.hasBeenClicked === true && this.initialPosition === false) {
+        this.currentIdClicked = null
+
         this.cameraToPeakAnimation.kill();
         this.cameraToInitialPosition = gsap.to(this.camera.position, {
           x: this.initialCamera.position.x,
@@ -214,13 +216,6 @@ export default class Flor {
         data.streaming ? data.streaming * 0.1 : 0,
         data.vaccine ? data.vaccine * 0.1 : 0,
       ];
-      this.peakElevation = [
-        THREE.MathUtils.lerp(this.peakElevation[0], this.peakTargetElevation[0], 0.1),
-        THREE.MathUtils.lerp(this.peakElevation[1], this.peakTargetElevation[1], 0.1),
-        THREE.MathUtils.lerp(this.peakElevation[2], this.peakTargetElevation[2], 0.1),
-        THREE.MathUtils.lerp(this.peakElevation[3], this.peakTargetElevation[3], 0.1),
-        THREE.MathUtils.lerp(this.peakElevation[4], this.peakTargetElevation[4], 0.1),
-      ]
       this.lighthousesEl = data.event.id ? THREE.MathUtils.lerp(this.lighthousesEl, 4, 0.6) : THREE.MathUtils.lerp(this.lighthousesEl, 0, 0.6)
     }
 
@@ -238,16 +233,23 @@ export default class Flor {
         } else {
           this.currentIntersectId = null;
         }
-
-        if(this.currentIdClicked){
-          this.peakTargetElevation[this.currentIdClicked] = 
-          this.peakTargetElevation.forEach((peakTarg, i) => {
-            if (i != this.currentIdClicked) {
-              peakTarg = 0
-            }
-          })
-        }
       }
+      
+      if(this.currentIdClicked || this.currentIdClicked === 0){
+        this.peakTargetElevation.forEach((peakTarg, i) => {
+          if (i != this.currentIdClicked) {
+            this.peakTargetElevation[i] = 0
+          }
+        })
+      }
+
+      this.peakElevation = [
+        THREE.MathUtils.lerp(this.peakElevation[0], this.peakTargetElevation[0], 0.1),
+        THREE.MathUtils.lerp(this.peakElevation[1], this.peakTargetElevation[1], 0.1),
+        THREE.MathUtils.lerp(this.peakElevation[2], this.peakTargetElevation[2], 0.1),
+        THREE.MathUtils.lerp(this.peakElevation[3], this.peakTargetElevation[3], 0.1),
+        THREE.MathUtils.lerp(this.peakElevation[4], this.peakTargetElevation[4], 0.1),
+      ]
 
       for (let x = 0; x < this.amount; x++) {
         for (let z = 0; z < this.amount; z++) {
@@ -272,7 +274,7 @@ export default class Flor {
             peaksStep++;
 
             //Camera Animation with raycasting on peaks
-            this.animCamera(this.getPeaksPos()[peaksStep - 1], i, peaksStep-1)
+            this.animCamera(this.getPeaksPos()[peaksStep - 1], i, peaksStep-1, false)
 
           }
 
@@ -286,7 +288,7 @@ export default class Flor {
 
                 this.LighthousesPos[data.event.id].y = y
 
-                this.animCamera(this.getLighthousesPos()[data.event.id], i, data.event.id)
+                this.animCamera(this.getLighthousesPos()[data.event.id], i, data.event.id , true)
                 
               }
             } else if(i === this.lastLighthousesElId){
@@ -304,7 +306,7 @@ export default class Flor {
                 this.topInstMesh.setColorAt(
                   i,
                   this.color.setHex(
-                    this.getColorDegrade(this.colorsPeaks[m], r)
+                    this.getColorDegrade(this.colorsPeaks[m], r, false)
                   )
                 );
 
@@ -388,9 +390,10 @@ export default class Flor {
     return this.lastLighthousesID
   }
 
-  animCamera(target, intersect, id){
+  animCamera(target, intersect, id, isLighthouse){
     if (this.currentIntersectId === intersect && this.clicked === true) {
-      this.currentIdClicked = id
+      this.currentIdClicked = isLighthouse ? null : id
+      this.clickedIsLighthouse = isLighthouse
       if (
         this.isAnimated === false &&
         this.hasBeenClicked === false
