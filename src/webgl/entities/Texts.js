@@ -118,7 +118,7 @@ export default class Texts {
         myText.position.y = lighthousePos[index].y + 4.6
         myText.position.z = lighthousePos[index].z
 
-        if((!this.floor.isLighthouseRayc() && !this.floor.hasBeenClicked) || lighthousePos[index].y < 0.5 ){
+        if((!this.floor.isLighthouseRayc() && !this.floor.hasBeenClicked && !this.floor.clickedIsLighthouse ) || lighthousePos[index].y < 0.5 || (this.floor.hasBeenClicked && !this.floor.clickedIsLighthouse)){
           myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 0, 0.1)
           myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 0, 0.1)
           myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 0, 0.1)
