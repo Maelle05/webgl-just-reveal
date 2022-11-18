@@ -28,7 +28,7 @@ export default class Flor {
     this.topDummy = new THREE.Object3D();
     this.color = new THREE.Color();
 
-    this.keyboardAudio = new Audio("../../public/assets/music/keyboard-cut.mp3");
+    this.keyboardAudio = new Audio("../../public/assets/music/keyboard-cut-shorter.mp3");
 
     const count = Math.pow(this.amount, 2);
 
@@ -202,6 +202,16 @@ export default class Flor {
     this.raycaster = new THREE.Raycaster();
     this.currentIntersectId = null;
 
+    this.lastsIntersect = []
+    setInterval(()=>{
+      this.lastsIntersect.shift()
+    }, 40)
+
+    window.addEventListener("mousemove", (e) => {
+      this.mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+      this.mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+    });
+
     this.init();
   }
 
@@ -276,6 +286,14 @@ export default class Flor {
           if (this.experienceStarted === true) {
             this.keyboardAudio.play();
           }
+          
+          if(this.lastsIntersect[this.lastsIntersect.length-1] != this.currentIntersectId){
+            this.lastsIntersect.push(this.currentIntersectId)
+            if (this.lastsIntersect.length > 15) {
+              this.lastsIntersect.shift()
+            }
+          }
+          
         } else {
           this.currentIntersectId = null;
         }
@@ -320,7 +338,7 @@ export default class Flor {
       for (let x = 0; x < this.amount; x++) {
         for (let z = 0; z < this.amount; z++) {
           if (i === this.currentIntersectId) {
-            this.instMesh.setColorAt(i, new THREE.Color("#ffffff"));
+            this.instMesh.setColorAt(i, new THREE.Color("#808080"));
             this.instMesh.instanceColor.needsUpdate = true;
           } else {
             this.instMesh.setColorAt(i, new THREE.Color("#363636"));
@@ -328,6 +346,34 @@ export default class Flor {
           }
 
           let y = (Math.sin(x / 4 + time) + Math.sin(z / 4 + time)) * 0.2;
+
+          this.lastsIntersect.forEach((inter, index) => {
+            if(this.lastsIntersect.length != index && this.lastsIntersect.length - 1 != index){
+              if (inter === i) {
+                y += 0.12
+              } else if( 
+                  inter+1 === i
+              ||  inter-1 === i
+              ||  inter+this.amount === i
+              ||  inter-this.amount === i
+              ){
+                y += 0.06
+              } else if(
+                    inter+2 === i
+                ||  inter-2 === i
+                ||  inter+this.amount*2 === i
+                ||  inter-this.amount*2 === i
+                ||  inter-this.amount+1 === i
+                ||  inter-this.amount-1 === i
+                ||  inter+this.amount+1 === i
+                ||  inter+this.amount-1 === i
+              ){
+                y += 0.03
+              }
+            }
+          });
+
+          
 
           if (this.isPeak(i)) {
             y += this.peakElevation[peaksStep];
