@@ -9,27 +9,28 @@ export default class Texts {
     const textData = [
       {
         name: 'Confinement',
-        desc: 'balabalhab'
+        desc: 'Pendant ces années covid, \nles confinements ont rythmés les \nquotidiens des français'
       },
       {
         name: 'Recettes',
-        desc: 'balabalhab \nsodifjsldufhsld fsjfd \nsdjufisodfbhsu'
+        desc: 'Au cours des années covid, \nla cuisine est devenu un passe-temps \ntrès apprécié chez les français'
       },
       {
         name: 'Sport',
-        desc: 'balabalhab'
+        desc: 'Confinés chez eux, \nbeaucoup de français se sont \nmis au sport pendant le confinement'
       },
       {
         name: 'Streaming',
-        desc: 'balabalhab'
+        desc: 'Malgré la fermeture des cinéma, \nl\'audiovisuel a vu exploser \nla demande sur les plateformes \nde streaming'
       },
       {
         name: 'Vaccin',
-        desc: 'balabalhab'
+        desc: 'Très débattu dans l\'actualité, \nles recherches sur le vaccin sont \napparu lors du 2ème confinement'
       },
     ]
   
     this.myTexts = []
+    this.myTextsDecal = 0
 
     const lighthouseData = [
       {
@@ -38,23 +39,23 @@ export default class Texts {
       },
       {
         name: "Coiffure",
-        desc: "La catégorie coiffure fait partie \ndes termes les plus recherchés \nsur google en 2020"
+        desc: "La catégorie coiffure fait \npartie des termes les \nplus recherchés sur \ngoogle en 2020"
       },
       {
         name: "103",
-        desc: "103 jours de confinement en 2020"
+        desc: "103 \nc'est le nombre de \njours de confinement \nen 2020"
       },
       {
         name: "Chasse", 
-        desc: "Dérogation pour les chasseurs \npendant le deuxième confinement"
+        desc: "Dérogation pour les \nchasseurs pendant le \ndeuxième confinement"
       },
       {
         name: "Rave party",
-        desc: "rave party à Pont Réan \nle 31 décembre 2020"
+        desc: "Rave party à Pont Réan \npour fêter le nouvel an"
       },
       {
         name: "Dauphins",
-        desc: "des dauphins dans la lagune \nde Venise en italie le 22 mars 2021"
+        desc: "Des dauphins sont \napparus dans le port \nde Cagliari profitant \ndu calme du confinement"
       }
     ]
 
@@ -90,17 +91,27 @@ export default class Texts {
     if(this.myTexts.length > 4){
       const peaksPos = this.floor.getPeaksPos()
       this.myTexts.forEach((myText, index) => {
-        myText.position.x = peaksPos[index].x
-        myText.position.y = peaksPos[index].y + 4.6
-        myText.position.z = peaksPos[index].z
-
-        if(peaksPos[index].y < 0.35){
+        if(peaksPos[index].y < 0.4){
           myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 0, 0.2)
           myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 0, 0.2)
         } else {
           myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 1, 0.2)
           myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 1, 0.2)
+
+          if(this.floor.hasBeenClicked && this.floor.currentIdClicked === index && !this.floor.clickedIsLighthouse){
+            this.myTextsDecal = THREE.MathUtils.lerp( this.myTextsDecal ,myText.children[1].geometry.boundingBox.max.y*2.3 + .3, 0.5)
+            myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 1, 0.2)
+          } else {
+            this.myTextsDecal = THREE.MathUtils.lerp( this.myTextsDecal , 0, 0.5)
+            myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 0, 0.2)
+          }
         }
+        
+        
+
+        myText.position.x = peaksPos[index].x
+        myText.position.y = peaksPos[index].y + 4.6 + this.myTextsDecal
+        myText.position.z = peaksPos[index].z
       })
     }
 
@@ -112,7 +123,7 @@ export default class Texts {
         myText.position.y = lighthousePos[index].y + 4.6
         myText.position.z = lighthousePos[index].z
 
-        if((!this.floor.isLighthouseRayc() && !this.floor.hasBeenClicked) || lighthousePos[index].y < 0.5 ){
+        if((!this.floor.isLighthouseRayc() && !this.floor.hasBeenClicked && !this.floor.clickedIsLighthouse ) || lighthousePos[index].y < 0.5 || (this.floor.hasBeenClicked && !this.floor.clickedIsLighthouse)){
           myText.children[0].material.opacity = THREE.MathUtils.lerp( myText.children[0].material.opacity , 0, 0.1)
           myText.children[1].material.opacity = THREE.MathUtils.lerp( myText.children[1].material.opacity , 0, 0.1)
           myText.children[2].material.opacity = THREE.MathUtils.lerp( myText.children[2].material.opacity , 0, 0.1)

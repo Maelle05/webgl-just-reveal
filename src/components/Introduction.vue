@@ -30,9 +30,11 @@
 import {ref} from "vue"
 
 const introductionRef = ref()
+const audio = new Audio('../public/assets/music/spy.mp3')
 
 const hideModal = () => {
   introductionRef.value.classList.add('u-hidden')
+  audio.play()
 
   setTimeout(() => {
     document.getElementsByClassName('timeline__header')[0].classList.remove('u-hidden')
