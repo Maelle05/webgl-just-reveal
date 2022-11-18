@@ -41,7 +41,7 @@ export default class WebGlManager {
       this.camera = new THREE.PerspectiveCamera(35, this.sizes.width / this.sizes.height, 0.5, 700)
       this.initialCamera = {lookAt : {x: 5, y: 2, z: 0}, position : {x: 23, y: 13, z: 34}}
       this.camera.position.set(this.initialCamera.position.x, this.initialCamera.position.y, this.initialCamera.position.z)
-      this.camera.lookAt(this.initialCamera.lookAt.x, this.initialCamera.lookAt.y, this.initialCamera.lookAt.z)
+      // this.camera.lookAt(this.initialCamera.lookAt.x, this.initialCamera.lookAt.y, this.initialCamera.lookAt.z)
       this.scene.add(this.camera)
 
       if(this.debug.active) {
