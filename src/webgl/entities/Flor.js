@@ -8,7 +8,7 @@ export default class Flor {
     this.initialCamera = initialCamera;
     this.scroll = scroll;
 
-    this.keyboardAudio = new Audio("../../public/assets/music/keyboard-cut-shorter.mp3");
+    this.keyboardAudio = new Audio("/assets/music/keyboard-cut-shorter.mp3");
 
 
     this.mouse = new THREE.Vector2(-1, 1);
